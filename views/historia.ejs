@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,-25" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="estilos/style.css" />
+  <title>História </title>
+</head>
+
+<body>
+  <header>
+
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul class="menu">
+      <li> <img class="logo" src="logos/logo6.png" alt="logo_leilabolos" /></li>
+      <li></li>
+      <li></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cardapio.html">Cardápio</a></li>
+      <li><a href="contato.html">Contato</a></li>
+      <li>
+        <!-- Carrinho no Menu -->
+        <div id="carrinho-menu"> 
+          <a href="#">
+            <img class="logo_carrinho" src="icone/carrinho.png" alt="logo_carrinho" />
+          </a>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Botão para abrir o carrinho -->
+    <button style="display: none;"  id="abrirCarrinho" class="btn btn-warning mt-3">Ver Carrinho</button>
+
+      <!-- Carrinho -->
+      <div id="carrinho">
+        <h2>Seu Carrinho</h2>
+        <ul id="itensCarrinho"></ul>
+        <p id="totalCarrinho">Total: R$ 0,00</p>
+        <button id="fecharCarrinho" class="btn btn-secondary">Fechar</button>
+      </div>
+  </header>
+
+  <main>
+    <article class="historia">
+      <h1>Uma História de Sabores </h1>
+      <br>
+<p>
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi doloribus voluptatum vel sunt explicabo dignissimos esse nemo, perferendis consequatur autem corporis quisquam sed eveniet iusto suscipit repellat, ipsa perspiciatis! Sequi!
+  Itaque voluptate at, porro qui voluptates error expedita. Eaque sequi libero excepturi dolor commodi doloribus magnam optio, repellendus minima dolorem laborum incidunt eos voluptatem quam sint! Eligendi maxime odit architecto.
+  Ea id magnam ex perspiciatis assumenda, blanditiis expedita est corporis quae, corrupti ad maiores quia molestias adipisci modi voluptatem odio rem, iure possimus iste ullam obcaecati nesciunt tenetur harum! Eum.
+  </p>
+    </article>
+   
+    
+  </main>
+
+  <footer>
+    <nav class="direcao_footer" >
+      <ul>
+        <li><a href="#">Horário de atendimento:
+            seg a sáb das 9h às 18h.</a></li>
+      </ul>
+
+      <ul class="logos_footer">
+        <li><a href="contato.html"><img class="logo_footer_filho"
+              src="icone/local.png" alt="icone_mapa"></a></li>
+        <li><img class="logo_footer_filho" src="icone/whatsapp.png" alt="icone_whatsapp"></li>
+        <li><img class="logo_footer_filho" src="icone/envelope.png" alt="logo_envelope"></li>
+        <li><a href="https://www.instagram.com/leilaabolos/" target="_blank"><img class="logo_footer_filho"
+              src="icone/instagram.png" alt="instagram"></a></li>
+
+      </ul>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

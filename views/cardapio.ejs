@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Link para ícones do Google Fonts -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,-25" />
+  <!-- Link para Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <!-- Link para Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <!-- Link para arquivo CSS personalizado -->
+  <link rel="stylesheet" href="estilos/style.css" />
+  <title>Leila Bolos - Cardapio </title>
+</head>
+
+<body id="top">
+  <header>
+
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul class="menu">
+      <li>
+        <a class="link_logo" href="#top"><img class="logo" src="logos/logo6.png" alt="logo_leilabolos" /></a>
+      </li>
+      <li>
+        <a href="index.html"><img class="logo" src="logos/Bolos da Leila.png" style="width: 22rem;" alt="logo_leilabolos" /></a>
+      </li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li><a href="historia.html">História</a></li>
+      <li><a href="contato.html">Contato</a></li>
+      <li>
+        <!-- Carrinho no Menu -->
+        <div id="carrinho-menu">
+          <a href="#">
+            <img class="logo_carrinho" src="logos/carrinho-de-compras.png" alt="logo_carrinho" />
+          </a>
+        </div>
+      </li>
+    </ul>
+
+    <!-- Botão para abrir o carrinho (escondido por padrão) -->
+    <button style="display: none;" id="abrirCarrinho" class="btn btn-warning mt-3">Ver Carrinho</button>
+
+    <!-- Carrinho -->
+    <div id="carrinho">
+      <h2>Seu Carrinho</h2>
+      <ul id="itensCarrinho"></ul>
+      <p id="totalCarrinho">Total: R$ 0,00</p>
+      <button id="fecharCarrinho" class="btn btn-secondary">Fechar</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container mt-5">
+      <h1 class="text-center mb-4">Nosso Cardápio de Delícias</h1>
+      <h2 id="bolos" >Bolos</h2>
+      <div id="cardapio">
+        <!-- Bolos -->
+
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Bolo+Margherita" alt="Bolo Margherita"
+            class="cardapio-img">
+          <span>Bolo Margherita</span><span class="preco">R$ 50,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal1">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Bolo+Floresta+Negra"
+            alt="Bolo Floresta Negra Encantada" class="cardapio-img">
+          <span>Bolo Floresta Negra</span><span class="preco">R$ 50,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal2">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Bolo+de+Queijo+c%2F+Chocolate"
+            alt="Bolo de Queijo com Gotas de Chocolate" class="cardapio-img">
+          <span>Bolo de Queijo c/ Chocolate</span><span class="preco">R$ 50,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal3">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Bolo+Quatro+Leites"
+            alt="Bolo Quatro Leites com Frutas Vermelhas" class="cardapio-img">
+          <span>Bolo Quatro Leites</span><span class="preco">R$ 50,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal4">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Bolo+de+Cenoura"
+            alt="Bolo de Cenoura com Cobertura de Chocolate" class="cardapio-img">
+          <span>Bolo de Cenoura</span><span class="preco">R$ 50,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal5">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Bolo+Red+Velvet" alt="Bolo Red Velvet Tentação"
+            class="cardapio-img">
+          <span>Bolo Red Velvet</span><span class="preco">R$ 50,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal6">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Bolo+de+Fub%C3%A1"
+            alt="Bolo de Fubá com Goiabada Cremosa" class="cardapio-img">
+          <span>Bolo de Fubá</span><span class="preco">R$ 50,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal7">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Bolo+de+Lim%C3%A3o"
+            alt="Bolo de Limão com Cobertura de Merengue" class="cardapio-img">
+          <span>Bolo de Limão</span><span class="preco">R$ 50,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal8">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Bolo+de+Chocolate"
+            alt="Bolo de Chocolate com Recheio de Brigadeiro" class="cardapio-img">
+          <span>Bolo de Chocolate</span><span class="preco">R$ 50,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal9">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Bolo+de+Nozes" alt="Bolo de Nozes com Doce de Leite"
+            class="cardapio-img">
+          <span>Bolo de Nozes</span><span class="preco">R$ 50,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal10">Detalhes</button>
+        </div>
+      </div>
+      <h2>Doces</h2>
+      <div id="cardapio">
+        <!-- Doces -->
+
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Brigadeiro" alt="Brigadeiro" class="cardapio-img">
+          <span>Brigadeiro</span><span class="preco">R$ 2,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal11">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Beijinho" alt="Beijinho" class="cardapio-img">
+          <span>Beijinho</span><span class="preco">R$ 2,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal12">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Cajuzinho" alt="Cajuzinho" class="cardapio-img">
+          <span>Cajuzinho</span><span class="preco">R$ 3,00</span> <button type="button" class="btn btn-info"
+            data-toggle="modal" data-target="#modal13">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Trufa" alt="Trufa" class="cardapio-img">
+          <span>Trufa</span><span class="preco">R$ 3,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal14">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Quindim" alt="Quindim" class="cardapio-img">
+          <span>Quindim</span><span class="preco">R$ 4,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal15">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Pa%C3%A7oca" alt="Paçoca" class="cardapio-img">
+          <span>Paçoca</span><span class="preco">R$ 2,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal16">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Doce+de+Leite" alt="Doce de Leite"
+            class="cardapio-img">
+          <span>Doce de Leite</span><span class="preco">R$ 5,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal17">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Brigadeiro+Gourmet" alt="Brigadeiro Gourmet"
+            class="cardapio-img">
+          <span>Brigadeiro Gourmet</span><span class="preco">R$ 4,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal18">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Mousse+de+Maracuj%C3%A1" alt="Mousse de Maracujá"
+            class="cardapio-img">
+          <span>Mousse de Maracujá</span><span class="preco">R$ 6,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal19">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Pudim+de+Leite" alt="Pudim de Leite"
+            class="cardapio-img">
+          <span>Pudim de Leite</span><span class="preco">R$ 5,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal20">Detalhes</button>
+        </div>
+      </div>
+      <h2>Salgados</h2>
+      <div id="cardapio">
+        <!-- Salgados -->
+
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Coxinha" alt="Coxinha" class="cardapio-img">
+          <span>Coxinha</span><span class="preco">R$ 5,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal21">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Risole+de+Carne" alt="Risole de Carne"
+            class="cardapio-img">
+          <span>Risole de Carne</span><span class="preco">R$ 5,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal22">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Pastel+de+Frango" alt="Pastel de Frango"
+            class="cardapio-img">
+          <span>Pastel de Frango</span><span class="preco">R$ 6,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal23">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Enroladinho+de+Salsicha" alt="Enroladinho de Salsicha"
+            class="cardapio-img">
+          <span>Enroladinho de Salsicha</span><span class="preco">R$ 4,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal24">Detalhes</button>
+        </div>
+        <div class="cardapio-item">
+          <img src="https://via.placeholder.com/150x100.png?text=Empada+de+Palmito" alt="Empada de Palmito"
+            class="cardapio-img">
+          <span>Empada de Palmito</span><span class="preco">R$ 6,00</span>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal25">Detalhes</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Modais - Bolos -->
+    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modalLabel1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel1">Bolo Margherita</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Bolo+Margherita" alt="Bolo Margherita"
+              class="modal-img">
+            <p>Bolo de baunilha com cobertura de cream cheese e morangos frescos, decorado com manjericão fresco. Uma
+              explosão de frescor em cada fatia!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Bolo Margherita', 35)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel2" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel2">Bolo Floresta Negra</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Bolo+Floresta+Negra" alt="Bolo Floresta Negra"
+              class="modal-img">
+            <p>Bolo de chocolate com camadas de cerejas frescas, chantilly e raspas de chocolate. Um clássico
+              irresistível
+              com um toque de magia.</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Bolo Floresta Negra', 38)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modalLabel3" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel3">Bolo de Queijo c/ Chocolate</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">X</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Bolo+de+Queijo+c%2F+Chocolate"
+              alt="Bolo de Queijo c/ Chocolate" class="modal-img">
+            <p>Bolo de queijo cremoso com gotas de chocolate meio amargo. Simplesmente irresistível!</p>
+            <button type="button" class="btn btn-success"
+              onclick="addToCart('Bolo de Queijo c/ Chocolate', 34)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal4" tabindex="-1" aria-labelledby="modalLabel4" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel4">Bolo Quatro Leites</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Bolo+Quatro+Leites" alt="Bolo Quatro Leites"
+              class="modal-img">
+            <p>Bolo com camadas de leite condensado, leite evaporado, creme de leite e leite de coco, coberto com frutas
+              vermelhas frescas. Uma sinfonia de sabores e texturas!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Bolo Quatro Leites', 45)">Adicionar
+              ao Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal5" tabindex="-1" aria-labelledby="modalLabel5" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel5">Bolo de Cenoura</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Bolo+de+Cenoura" alt="Bolo de Cenoura"
+              class="modal-img">
+            <p>Bolo de cenoura com especiarias e cobertura de chocolate cremoso. Um clássico que agrada a todos os
+              paladares!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Bolo de Cenoura', 50)">Adicionar
+              ao Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modal6" tabindex="-1" aria-labelledby="modalLabel6" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel6">Bolo Red Velvet</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Bolo+Red+Velvet" alt="Bolo Red Velvet"
+              class="modal-img">
+            <p>Bolo Red Velvet com massa macia e aveludada, coberto com cream cheese. Uma verdadeira tentação!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Bolo Red Velvet', 50)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modal7" tabindex="-1" aria-labelledby="modalLabel7" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel7">Bolo de Fubá</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Bolo+de+Fub%C3%A1" alt="Bolo de Fubá"
+              class="modal-img">
+            <p>Bolo de fubá com textura macia e úmida, recheado com goiabada cremosa. Uma combinação tipicamente
+              brasileira que encanta a todos!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Bolo de Fubá', 50)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modal8" tabindex="-1" aria-labelledby="modalLabel8" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel8">Bolo de Limão</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Bolo+de+Lim%C3%A3o" alt="Bolo de Limão"
+              class="modal-img">
+            <p>Bolo de limão com massa fofinha e cobertura de merengue italiano. Uma explosão de sabor cítrico e doce!
+            </p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Bolo de Limão', 50)">Adicionar
+              ao Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modal9" tabindex="-1" aria-labelledby="modalLabel9" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel9">Bolo de Chocolate</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Bolo+de+Chocolate" alt="Bolo de Chocolate"
+              class="modal-img">
+            <p>Bolo de chocolate com massa úmida e recheio cremoso de brigadeiro. Para os amantes de chocolate!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Bolo de Chocolate', 50)">Adicionar
+              ao Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modal10" tabindex="-1" aria-labelledby="modalLabel10" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel10">Bolo de Nozes</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Bolo+de+Nozes" alt="Bolo de Nozes" class="modal-img">
+            <p>Bolo de nozes com massa amanteigada e recheio de doce de leite. Uma combinação clássica e irresistível!
+            </p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Bolo de Nozes', 50)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modais - Doces -->
+    <div class="modal fade" id="modal11" tabindex="-1" aria-labelledby="modalLabel11" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel11">Brigadeiro</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Brigadeiro" alt="Brigadeiro" class="modal-img">
+            <p>O clássico brigadeiro, feito com chocolate em pó, leite condensado e manteiga. Irresistível!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Brigadeiro', 2)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal12" tabindex="-1" aria-labelledby="modalLabel12" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel12">Beijinho</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Beijinho" alt="Beijinho" class="modal-img">
+            <p>Delicioso beijinho, feito com coco ralado e leite condensado. Uma doçura!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Beijinho', 2)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal13" tabindex="-1" aria-labelledby="modalLabel13" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel13">Cajuzinho</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Cajuzinho" alt="Cajuzinho" class="modal-img">
+            <p> Cajuzinho irresistível, feito com amendoim e chocolate. Uma explosão de sabores!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Cajuzinho', 3)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal14" tabindex="-1" aria-labelledby="modalLabel14" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel14">Trufa</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Trufa" alt="Trufa" class="modal-img">
+            <p>Trufa tradicional, feita com chocolate ao leite e recheio cremoso. Perfeita para qualquer ocasião!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Trufa', 3)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal15" tabindex="-1" aria-labelledby="modalLabel15" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel15">Quindim</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Quindim" alt="Quindim" class="modal-img">
+            <p>Quindim delicioso, com textura macia e sabor inconfundível. Uma delícia brasileira!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Quindim', 4)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal16" tabindex="-1" aria-labelledby="modalLabel16" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel16">Paçoca</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Pa%C3%A7oca" alt="Paçoca" class="modal-img">
+            <p>Paçoca tradicional, feita com amendoim torrado e moído. Um clássico brasileiro!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Paçoca', 2)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal17" tabindex="-1" aria-labelledby="modalLabel17" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel17">Doce de Leite</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Doce+de+Leite" alt="Doce de Leite" class="modal-img">
+            <p>Doce de Leite cremoso e saboroso, feito com leite e açúcar. Perfeito para acompanhar bolos e sobremesas!
+            </p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Doce de Leite', 5)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal18" tabindex="-1" aria-labelledby="modalLabel18" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel18">Brigadeiro Gourmet</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Brigadeiro+Gourmet" alt="Brigadeiro Gourmet"
+              class="modal-img">
+            <p>Brigadeiro gourmet com chocolate belga e granulado belga. Uma experiência de sabor única!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Brigadeiro Gourmet', 4)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal19" tabindex="-1" aria-labelledby="modalLabel19" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel19">Mousse de Maracujá</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Mousse+de+Maracuj%C3%A1" alt="Mousse de Maracujá"
+              class="modal-img">
+            <p>Mousse de maracujá leve e refrescante, com sabor azedinho e doce na medida certa.</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Mousse de Maracujá', 6)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal20" tabindex="-1" aria-labelledby="modalLabel20" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel20">Pudim de Leite</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Pudim+de+Leite" alt="Pudim de Leite"
+              class="modal-img">
+            <p>Pudim de leite tradicional, com textura cremosa e sabor delicioso. Uma sobremesa clássica!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Pudim de Leite', 5)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modais - Salgados -->
+    <div class="modal fade" id="modal21" tabindex="-1" aria-labelledby="modalLabel21" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel21">Coxinha</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Coxinha" alt="Coxinha" class="modal-img">
+            <p>Coxinha de frango com massa crocante e recheio saboroso. Um clássico brasileiro irresistível!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Coxinha', 5)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal22" tabindex="-1" aria-labelledby="modalLabel22" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel22">Risole de Carne</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Risole+de+Carne" alt="Risole de Carne"
+              class="modal-img">
+            <p>Risole de carne com massa crocante e recheio suculento. Uma ótima opção para um lanche rápido!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Risole de Carne', 5)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal23" tabindex="-1" aria-labelledby="modalLabel23" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel23">Pastel de Frango</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Pastel+de+Frango" alt="Pastel de Frango"
+              class="modal-img">
+            <p>Pastel de frango sequinho e crocante, com recheio saboroso. Uma delícia!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Pastel de Frango', 6)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal24" tabindex="-1" aria-labelledby="modalLabel24" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel24">Enroladinho de Salsicha</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Enroladinho+de+Salsicha"
+              alt="Enroladinho de Salsicha" class="modal-img">
+            <p>Enroladinho de salsicha com massa fofinha e salsicha de qualidade. Perfeito para festas e lanches!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Enroladinho de Salsicha', 4)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal25" tabindex="-1" aria-labelledby="modalLabel25" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalLabel25">Empada de Palmito</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img src="https://via.placeholder.com/300x200.png?text=Empada+de+Palmito" alt="Empada de Palmito"
+              class="modal-img">
+            <p>Empada de palmito com recheio cremoso e saboroso. Uma opção leve e deliciosa!</p>
+            <button type="button" class="btn btn-success" onclick="addToCart('Empada de Palmito', 6)">Adicionar ao
+              Carrinho</button>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+  <footer style="position:auto">
+    <nav class="direcao_footer" >
+      <ul>
+        <li><a href="#">Horário de atendimento:
+            seg a sáb das 9h às 18h.</a></li>
+      </ul>
+
+      <ul class="logos_footer">
+        <li><a href="contato.html"><img class="logo_footer_filho"
+              src="icone/local.png" alt="icone_mapa"></a></li>
+        <li><img class="logo_footer_filho" src="icone/whatsapp.png" alt="icone_whatsapp"></li>
+        <li><img class="logo_footer_filho" src="icone/envelope.png" alt="logo_envelope"></li>
+        <li><a href="https://www.instagram.com/leilaabolos/" target="_blank"><img class="logo_footer_filho"
+              src="icone/instagram.png" alt="instagram"></a></li>
+
+      </ul>
+    </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+
+</html>

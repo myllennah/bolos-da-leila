@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,-25" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="estilos/style.css">
+  <script src="./js/script_eventos.js"></script>
+  <title> Leila Bolos- Contato </title>
+</head>
+
+<body class="icon-bg" >
+  <header>
+
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul class="menu">
+      <li> <img class="logo" src="logos/logo6.png" alt="logo_leilabolos" /></li>
+      <li></li>
+      <li></li>
+      <li><a href="historia.html">História</a></li>
+      <li><a href="cardapio.html">Cardápio</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li>
+        <!-- Carrinho no Menu -->
+        <div id="carrinho-menu"> 
+          <a href="#">
+            <img class="logo_carrinho" src="icone/carrinho.png" alt="logo_carrinho" />
+          </a>
+        </div>
+      </li>
+    </ul>
+
+     <!-- Botão para abrir o carrinho -->
+     <button style="display: none;"  id="abrirCarrinho" class="btn btn-warning mt-3">Ver Carrinho</button>
+
+      <!-- Carrinho -->
+      <div id="carrinho">
+        <h2>Seu Carrinho</h2>
+        <ul id="itensCarrinho"></ul>
+        <p id="totalCarrinho">Total: R$ 0,00</p>
+        <button id="fecharCarrinho" class="btn btn-secondary">Fechar</button>
+      </div>
+  </header>
+
+  <main style="overflow-x: hidden;">
+    <h1>Contato</h1>
+    <!-- Formulário de contato -->
+     <div class="pag-contato">
+     <div class="form-contato">
+      <h5>Faça a sua encomenda!</h5>
+      <form action="contato.php" method="POST">
+        <div>
+          <label for="nome">Nome</label>
+          <input id="input_nome" type="text" name="nome" required/>
+        </div>
+        <div>
+          <label for="telefone">Telefone de contato</label>
+          <input type="text" name="telefone" required/>
+        </div>
+        <div>
+          <label for="Mensagem">Mensagem</label>
+          <textarea name="mensagem" required></textarea>
+        </div>
+        <button id="buttonEnviar">Fazer pedido</button>    
+      </form>
+     </div>
+  
+      <div class="mapa">
+        <p>R. Maria Batista, 147<br>Jardim Neide, São Paulo</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14616.710092887077!2d-46.7440156!3d-23.6696087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5186619a2137%3A0xa4a58de34407d9e3!2sBolo%20da%20Leila!5e0!3m2!1spt-BR!2sbr!4v1727673976205!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+      
+    </main>
+
+  <footer>
+    <nav class="direcao_footer" >
+      <ul>
+        <li><a href="#">Horário de atendimento:
+            seg a sáb das 9h às 18h.</a></li>
+      </ul>
+
+      <ul class="logos_footer">
+        <li><a href="contato.html"><img class="logo_footer_filho"
+              src="icone/local.png" alt="icone_mapa"></a></li>
+        <li><img class="logo_footer_filho" src="icone/whatsapp.png" alt="icone_whatsapp"></li>
+        <li><img class="logo_footer_filho" src="icone/envelope.png" alt="logo_envelope"></li>
+        <li><a href="https://www.instagram.com/leilaabolos/" target="_blank"><img class="logo_footer_filho"
+              src="icone/instagram.png" alt="instagram"></a></li>
+
+      </ul>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
