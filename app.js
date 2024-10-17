@@ -25,6 +25,10 @@ app.get('/doces', (req, res) => {
     res.render('doces');
 });
 
+app.get('/login', (req, res) =>{
+     res.render('Login');
+});
+
 app.get('/cardapio', (req, res) => {
     res.render('cardapio');
 });
