@@ -9,12 +9,13 @@
   transition: all 0.2s ease-in-out;
 }
 
-body{
+body {
   background-color: #E4FBFF;
 }
 
 main {
   min-height: 75vh;
+  /*de "height para min-height deixa a altura da página flexível e evita o espaço sobrando -mm*/
   text-align: center;
   padding: 1% 8%;
   font-size: 4rem;
@@ -40,13 +41,6 @@ h3 {
 h2 {
   font-size: 5rem;
   margin: 10rem auto;
-}
-
-p{
-  font-family: 'Muli';
-  font-size: 1.8rem;
-  margin-bottom: 3%;
-  text-align: justify;
 }
 
 .menu {
@@ -202,7 +196,9 @@ a {
   background-color: #FFC5DE;
   padding: 0 2%;
   border-radius: 10px;
-  border: #000000 solid 1px;
+
+
+
 
 }
 
@@ -301,15 +297,26 @@ footer>nav>ul>li>a:hover {
   padding-top: 5%;
 }
 
+
+ main h1{
+  text-align: center;
+  margin-left: 10vw;
+}
+
 .pag-contato{
+  position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+  left: 20vw;
 }
 
 .form-contato{  
   width: 35vw;
   padding: 5rem;
+  margin-left: 10%;
+ 
 }
 
 form div{  
@@ -334,6 +341,13 @@ form input, form textarea{
   font-weight: bold;
   text-wrap: nowrap;
 }
+.login h5{
+  font-size: 3rem;
+  font-weight: bold;
+  text-wrap: nowrap;
+}
+
+
 
 #buttonEnviar{
   background-color:#d6e4a4;
@@ -356,6 +370,16 @@ form input, form textarea{
 .mapa p{
   font-family: 'Muli', sans-serif;
   font-size: 2rem;
+}
+
+.login{
+  border-left: #000000 4px solid;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 /* Fim da adição */
@@ -498,12 +522,12 @@ form input, form textarea{
   }
 
   .form-contato{  
-    width: 90vw;
+    width: 70vw;
     padding: 2rem;
   }
   
-  .mapa{
-    width: 90vw;
+  .login{
+    width: 84vw;
     padding: 2rem;
     border-left: none;
   }
