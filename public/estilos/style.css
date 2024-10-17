@@ -9,13 +9,12 @@
   transition: all 0.2s ease-in-out;
 }
 
-body {
+body{
   background-color: #E4FBFF;
 }
 
 main {
   min-height: 75vh;
-  /*de "height para min-height deixa a altura da página flexível e evita o espaço sobrando -mm*/
   text-align: center;
   padding: 1% 8%;
   font-size: 4rem;
@@ -41,6 +40,13 @@ h3 {
 h2 {
   font-size: 5rem;
   margin: 10rem auto;
+}
+
+p{
+  font-family: 'Muli';
+  font-size: 1.8rem;
+  margin-bottom: 3%;
+  text-align: justify;
 }
 
 .menu {

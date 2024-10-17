@@ -17,7 +17,6 @@ app.get('/historia', (req, res) => {
 });
 
 app.use('/sobre', (req, res) => {
-
 res.redirect('/historia');
 });
 
