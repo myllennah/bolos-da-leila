@@ -586,8 +586,8 @@ form textarea {
   }
 
 
-  .img_produtos_filho>a>img:hover,
-  .img_produtos_filho>div>a>img:hover {
+  .img_produtos_filho>a:hover,
+  .img_produtos_filho>div>a:hover {
     transform: scale(1);
 
   }
@@ -595,7 +595,6 @@ form textarea {
   .img_produtos_filho>div {
     justify-content: space-between;
     gap: 1rem;
-    flex-direction: column;
   }
 
   .img_produtos_filho>a>img,
@@ -608,29 +607,53 @@ form textarea {
     flex-direction: column;
     align-items: center;
     height: auto;
-    width: 85vw;
+    width: 90vw;
+    overflow-x: hidden;
 
   }
 
   .img_produtos_filho {
-    transform: translate(-75%);
+    flex-direction: column;
     height: auto;
+  }
+  .img_produtos_filho div {
+    flex-direction: column;
+    width: 90vw;
+    height: 50vh;
+    margin: auto;
+  }
+  .img_produtos_filho>.img_1 {
+    height: 25vh;
+    width: 95%;
+    font-size: 3rem;
+    margin-bottom:1rem ;
+    transform: translate(-2%);
+  }
+  .img_produtos_filho>.img_1:hover {
+   transform: scale(1);
+  }
+
+  .img_produtos_filho>div>.img_2,
+  .img_produtos_filho>div>.img_3 {
+    height: 70%;
+    width: 90%;
+    font-size: 3rem;
   }
 
   .sobre_produtos_filho h2 {
-    text-align: center;
     font-size: 5rem;
   }
 
   .sobre_produtos_filho {
     padding: 1rem;
     text-align: justify;
-  }
-
+    margin: auto;
+  } 
+  
   .button {
     position: absolute;
     right: 50%;
-    transform: translate(70%);
+    transform: translate(80%);
     margin: 2rem;
   }
 
@@ -648,13 +671,11 @@ form textarea {
     height: 40vh;
   }
 
-  /* banners para celular
-
-
-  #banner1 {
-    background: black url(../banners-celulares/1.png) top/cover no-repeat;
   
-  }
+  #banner1 { font-size: 2rem;
+ 
+  
+  }/*
   #banner2 {
     background: black url(../banners-celulares/2.png) bottom/cover no-repeat;
   
