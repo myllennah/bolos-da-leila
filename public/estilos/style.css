@@ -267,7 +267,7 @@ footer {
   text-align: left;
   border-top: 0.2rem solid rgb(0, 0, 0);
   padding: 1%;
-  position: relative;
+  position: auto;
 }
 
 footer>nav>ul>li>a {
@@ -342,12 +342,11 @@ main h1 {
 }
 
 .pag-contato {
-  position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  left: 20vw;
+  transform: translateX(-5%);
 }
 
 .form-contato {
@@ -671,11 +670,11 @@ form textarea {
     height: 40vh;
   }
 
-  
+  /*
   #banner1 { font-size: 2rem;
  
   
-  }/*
+  }
   #banner2 {
     background: black url(../banners-celulares/2.png) bottom/cover no-repeat;
   
