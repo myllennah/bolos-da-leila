@@ -102,8 +102,9 @@ a {
   width: 12rem;
 }
 
-.logo_carrinho {
+.logo_menu {
   height: 45px;
+  margin: 0;
 }
 
 #itensCarrinho>li {
@@ -170,7 +171,7 @@ a {
 }
 
 .sobre_produtos_filho h2 {
-  font-size: 7rem;
+  font-size: 5rem;
 }
 
 .img_produtos_filho {
@@ -268,7 +269,7 @@ a {
   background-color: #FFC5DE;
   padding: 0 2%;
   border-radius: 10px;
-  border: black solid 1px;
+  border: none;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.425);
 
 }
@@ -281,7 +282,8 @@ a {
 .button:hover {
   text-decoration: none;
   color: #000000;
-  zoom: 110%;
+  font-size: 3rem;
+  
 
 }
 
@@ -861,7 +863,7 @@ form textarea {
   bottom: 30rem;
   background-color:#ff0084;
   color: rgb(255, 255, 255);
-  border: 3px solid rgb(255, 255, 255);
+  border: none  ;
   border-radius: 5px;
   font-size: 1.5rem;
   transition: ease-in-out 0.5;
