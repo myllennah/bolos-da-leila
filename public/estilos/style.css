@@ -281,8 +281,15 @@ a {
 
 .button:hover {
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
   font-size: 3rem;
+  text-shadow: 
+    0 0 1px #FF79BF, /* Sombra interna */
+    0 0 2px #FF79BF, 
+    0 0 3px #FF79BF,
+    0 0 4px #ff0084, /* Sombra rosa */
+    0 0 6px #ff0084,
+    0 0 8px #ff0084;
   
 
 }
@@ -322,10 +329,16 @@ footer>nav>ul {
 }
 
 footer>nav>ul>li>a:hover {
-  border-bottom: 2px solid white;
   text-decoration: none;
   color: white;
   padding-bottom: 0.05rem;
+  text-shadow: 
+    0 0 1px #FF79BF, /* Sombra interna */
+    0 0 2px #FF79BF, 
+    0 0 3px #FF79BF,
+    0 0 4px #ff0084, /* Sombra rosa */
+    0 0 6px #ff0084,
+    0 0 8px #ff0084;
 }
 
 .hamburger {
