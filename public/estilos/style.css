@@ -442,20 +442,21 @@ form textarea {
 }
 
 .historia {
-  width: 50rem;
+  width: 70vw;
   font-size: 2.5rem;
   color: rgb(0, 0, 0);
   margin: 10vh auto;
   background-color: white;
-  padding: 5%;
+  padding: 3%;
   border-radius: 15px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.644);
 
 }
 
-.historia>h1 {
+.historia>.titulo_historia {
   text-align: center;
-  font-size: 4rem;
+  font-size: 5rem;
+  margin: auto;
 }
 
 .historia>p {
@@ -584,6 +585,9 @@ form textarea {
     overflow-x: hidden;
   }
 
+  .historia>.titulo_historia {
+    font-size: 3rem;
+  }
 
   .img_produtos_filho>a:hover,
   .img_produtos_filho>div>a:hover {
