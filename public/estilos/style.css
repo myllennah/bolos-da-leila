@@ -103,7 +103,7 @@ a {
 }
 
 .logo_menu {
-  height: 45px;
+  height: 3.5rem;
   margin: 0;
 }
 
@@ -463,7 +463,7 @@ form textarea {
 /* Fim da adição */
 
 .logos_footer {
-  width: 30rem;
+  width: 20rem;
   display: flex;
   align-items: center;
 
@@ -477,7 +477,8 @@ form textarea {
 }
 
 .logo_footer_filho {
-  width: 4rem;
+  height: 3rem;
+  margin: 0;
 }
 
 .historia {
