@@ -107,6 +107,7 @@ a {
   margin: 0;
 }
 
+
 #itensCarrinho>li {
   list-style-type: none;
   font-size: 2rem;
@@ -865,7 +866,7 @@ form textarea {
 
 /* Estilos para o botão do carrinho */
 #carrinho-menu img {
-  height: 45px;
+  height: 3rem;
 }
 
 #abrirCarrinho {
