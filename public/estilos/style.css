@@ -866,7 +866,7 @@ form textarea {
 
 /* Estilos para o botão do carrinho */
 #carrinho-menu img {
-  height: 3rem;
+  height: 3rem ; 
 }
 
 #abrirCarrinho {
