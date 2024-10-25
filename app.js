@@ -4,6 +4,20 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
+
+//importando banco de dados 
+var mysql = require("mysql");
+
+var conexaoBanco = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "bololeila"
+});
+
+module.exports = conexaoBanco;
+
+
 //acessando a rota
 app.get('/', (req, res) => {
 
