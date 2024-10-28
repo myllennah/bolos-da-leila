@@ -1,3 +1,5 @@
+CREATE database bolosdaleila
+
 
 CREATE TABLE `cadastro` (
   `nome_cliente` varchar(100) NOT NULL,

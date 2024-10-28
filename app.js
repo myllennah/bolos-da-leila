@@ -1,9 +1,13 @@
+//impotando a porra toda nesse caralho
+
 const express = require('express');
-
 const app = express();
-app.set('view engine', 'ejs');
 app.use(express.static('public'));
-
+const conexao = require('./conexaobanco');
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }))
+app.set('view engine', 'ejs');
 
 
 //acessando a rota
@@ -27,9 +31,6 @@ app.get('/doces', (req, res) => {
     res.render('doces');
 });
 
-app.get('/login', (req, res) => {
-    res.render('Login');
-});
 
 app.get('/cardapio', (req, res) => {
     res.render('cardapio');
@@ -38,9 +39,10 @@ app.get('/cardapio', (req, res) => {
 app.get('/contato', (req, res) => {
     res.render('contato');
 });
-
-
-var conexao = require("./app");
+//GET E ROTA
+app.get('/login', (req, res) => {
+    res.render('Login');
+});
 
 //POST
 
@@ -57,7 +59,7 @@ app.post('/login', function (req, res) {
         var sql = "INSERT INTO cadastro (nome_cliente, email,telefone, senha) VALUES (?,?, ?, ?)";
         conexao.query(sql, [nome_cliente, email, telefone, senha], function (error, result) {
             if (error) throw error;
-            res.send("Cliente cadastrado com sucesso! " + result.nome_cliente);
+            res.send("Cliente cadastrado com sucesso! " + result.email);
         });
 
     });
