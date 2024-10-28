@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,-25" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="estilos/style.css">
+  <script src="./js/script_eventos.js"></script>
+  <title> Leila Bolos- Contato </title>
+</head>
+
+<body class="icon-bg" id="top">
+  <header>
+
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <ul class="menu">
+      <li> <a class="link_logo" href="#top"><img class="logo" src="logos/logo6.png" alt="logo_leilabolos" /></a></li>
+      <li> <a href="/"><img class="logo" src="logos/Bolos da Leila.png" style="width: 22rem;"
+            alt="logo_leilabolos" /></a></li>
+      <li></li>
+      <li></li>
+      <li><a href="/historia">História</a></li>
+      <li><a href="/cardapio">Cardápio</a></li>
+      <li><a href="/contato">Contato</a></li>
+      <li>
+        <!-- Carrinho no Menu (CORRIGIDO: adicionado data-target) -->
+        <div id="carrinho-menu">
+          <a href="#" data-toggle="modal" data-target="#carrinhoModal">
+            <img class="logo_menu" src="logos/carrinho-de-compras.png" alt="logo_carrinho" />
+          </a>
+        </div>
+
+        <a href="/login"><img class="logo_menu" src="logos/do-utilizador.png" alt="logo_perfil"></a>
+      </li>
+    </ul>
+  </header>
+
+
+<main>
+
+  
+</main>
+
+    <div class="modal fade" id="carrinhoModal" tabindex="-1" role="dialog" aria-labelledby="carrinhoModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="carrinhoModalLabel">Seu Carrinho</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul id="itensCarrinho"></ul>
+          <p id="totalCarrinho">Total: R$ 0,00</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <a href="/checkout" class="btn btn-primary">Finalizar Compra</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <footer>
+      <nav class="direcao_footer">
+        <ul>
+          <li><a
+              href="https://www.google.com/maps/place/Bolo+da+Leila/@-23.669609,-46.744016,14z/data=!4m6!3m5!1s0x94ce5186619a2137:0xa4a58de34407d9e3!8m2!3d-23.6696087!4d-46.7440156!16s%2Fg%2F11gcz3kbft?hl=pt-BR&entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank">Horário de atendimento:
+              seg a sáb das 9h às 18h.</a></li>
+        </ul>
+  
+        <ul class="logos_footer">
+          <li><a href="/contato"><img class="logo_footer_filho" src="icone/local.png" alt="icone_mapa"></a>
+          <li><a href="https://api.whatsapp.com/send?phone=5511980802132" target="_blank"><img class="logo_footer_filho" src="icone/whatsapp.png" alt="icone_whatsapp"></a></li>
+          <li><a href="mailto:leilabolos@gmail.com"><img class="logo_footer_filho" src="icone/envelope.png" alt="logo_envelope"></a></li>
+          <li><a href="https://www.instagram.com/leilaabolos/" target="_blank"><img class="logo_footer_filho"
+                src="icone/instagram.png" alt="instagram"></a></li>
+  
+        </ul>
+      </nav>
+    </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

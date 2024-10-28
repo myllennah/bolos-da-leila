@@ -4,9 +4,9 @@ var mysql = require("mysql");
 
 const conexaoBanco = mysql.createConnection({
     host: 'localhost',
-    user: 'root',
+    user: 'yuri',
     password: '', // Se você tiver uma senha, coloque-a aqui
-    database: 'bolosdaleila'
+    database: 'cardapio_leilabolos'
 });
 
 module.exports = conexaoBanco;
