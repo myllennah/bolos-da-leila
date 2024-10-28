@@ -33,27 +33,15 @@
       <li><a href="/contato">Contato</a></li>
       <li>
         
-        <!-- Carrinho no Menu -->
         <div id="carrinho-menu">
-          <a href="#">
+          <a href="#" data-toggle="modal" data-target="#carrinhoModal">
             <img class="logo_menu" src="logos/carrinho-de-compras.png" alt="logo_carrinho" />
           </a>
-
         </div>
       
       <a href="/login"><img class="logo_menu" src="logos/do-utilizador.png" alt="logo_perfil"></a></li>
     </ul>
 
-    <!-- Botão para abrir o carrinho -->
-    <button style="display: none;" id="abrirCarrinho" class="btn btn-warning mt-3">Ver Carrinho</button>
-
-    <!-- Carrinho -->
-    <div id="carrinho">
-      <h2>Seu Carrinho</h2>
-      <ul id="itensCarrinho"></ul>
-      <p id="totalCarrinho">Total: R$ 0,00</p>
-      <button id="fecharCarrinho" class="btn btn-secondary">Fechar</button>
-    </div>
   </header>
 
   <main>
@@ -158,6 +146,29 @@
       </ul>
     </nav>
   </footer>
+
+    <!-- Modal do Carrinho -->
+    <div class="modal fade" id="carrinhoModal" tabindex="-1" role="dialog" aria-labelledby="carrinhoModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="carrinhoModalLabel">Seu Carrinho</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ul id="itensCarrinho"></ul>
+          <p id="totalCarrinho">Total: R$ 0,00</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+          <a href="/checkout" class="btn btn-primary">Finalizar Compra</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
