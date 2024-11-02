@@ -44,52 +44,62 @@
   </header>
 
 
-<main>
+  <main>
 
-  <div class="container mt-5">
-    <h1>Finalizar Pedido</h1>
+    <div class="container mt-6">
+      <h3>Finalizar Pedido</h3>
 
-    <% if (cartItems && cartItems.length > 0) { %>
-      <h2>Itens do Carrinho</h2>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Produto</th>
-            <th>Preço unitário</th>
-            <th>Quantidade</th>
-            <th>Subtotal</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% cartItems.forEach(item => { %>
+      <% if (cartItems && cartItems.length> 0) { %>
+        <table class="table_checkout">
+          <thead>
             <tr>
-              <td><%= item.name %></td>
-              <td>R$ <%= item.price.toFixed(2) %></td>
-              <td><%= item.quantity %></td>
-              <td>R$ <%= (item.price * item.quantity).toFixed(2) %></td>
+              <th>Produto</th>
+              <th>Preço unitário</th>
+              <th>Quantidade</th>
+              <th>Subtotal</th>
             </tr>
-          <% }); %>
-        </tbody>
-      </table>
+          </thead>
+         
+            <% cartItems.forEach(item=> { %>
+              <tr>
+                <td>
+                  <%= item.name %>
+                </td>
+                <td>R$ <%= item.price.toFixed(2) %>
+                </td>
+                <td>
+                  <%= item.quantity %>
+                </td>
+                <td>R$ <%= (item.price * item.quantity).toFixed(2) %>
+                </td>
+              </tr>
+              <% }); %>
 
-      <% let total = 0; 
-         cartItems.forEach(item => {
-           total += item.price * item.quantity;
-         }); %>
 
-      <h2>Total do Pedido: R$ <%= total.toFixed(2) %></h2>
+                <% let total=0; cartItems.forEach(item=> {
+                  total += item.price * item.quantity;
+                  }); %>
 
-      <h2>Informações de Contato</h2>
-      <form action="/finalizar-pedido" method="POST"> 
+          <tr>
+            <td rowspan="2" colspan="2" >Total do Pedido:</td>
+            <td rowspan="2" colspan="2" >R$ <%= total.toFixed(2) %>
+            </td>
+          </tf>
+          </tbody>
+        </table>
+        <h3>Informações de Contato</h3>
+        <form action="/finalizar-pedido" method="POST">
         </form>
-    <% } else { %>
-      <p>Seu carrinho está vazio.</p>
-    <% } %>
-  </div>
+        <% } else { %>
+          <p>Seu carrinho está vazio.</p>
+          <% } %> 
+          
+          <tbody>
+    </div>
 
-</main>
+  </main>
 
-    <div class="modal fade" id="carrinhoModal" tabindex="-1" role="dialog" aria-labelledby="carrinhoModalLabel"
+  <div class="modal fade" id="carrinhoModal" tabindex="-1" role="dialog" aria-labelledby="carrinhoModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -111,25 +121,27 @@
     </div>
   </div>
 
-    <footer>
-      <nav class="direcao_footer">
-        <ul>
-          <li><a
-              href="https://www.google.com/maps/place/Bolo+da+Leila/@-23.669609,-46.744016,14z/data=!4m6!3m5!1s0x94ce5186619a2137:0xa4a58de34407d9e3!8m2!3d-23.6696087!4d-46.7440156!16s%2Fg%2F11gcz3kbft?hl=pt-BR&entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank">Horário de atendimento:
-              seg a sáb das 9h às 18h.</a></li>
-        </ul>
-  
-        <ul class="logos_footer">
-          <li><a href="/contato"><img class="logo_footer_filho" src="icone/local.png" alt="icone_mapa"></a>
-          <li><a href="https://api.whatsapp.com/send?phone=5511980802132" target="_blank"><img class="logo_footer_filho" src="icone/whatsapp.png" alt="icone_whatsapp"></a></li>
-          <li><a href="mailto:leila76bolos@gmail.com"><img class="logo_footer_filho" src="icone/envelope.png" alt="logo_envelope"></a></li>
-          <li><a href="https://www.instagram.com/leilaabolos/" target="_blank"><img class="logo_footer_filho"
-                src="icone/instagram.png" alt="instagram"></a></li>
-  
-        </ul>
-      </nav>
-    </footer>
+  <footer>
+    <nav class="direcao_footer">
+      <ul>
+        <li><a
+            href="https://www.google.com/maps/place/Bolo+da+Leila/@-23.669609,-46.744016,14z/data=!4m6!3m5!1s0x94ce5186619a2137:0xa4a58de34407d9e3!8m2!3d-23.6696087!4d-46.7440156!16s%2Fg%2F11gcz3kbft?hl=pt-BR&entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank">Horário de atendimento:
+            seg a sáb das 9h às 18h.</a></li>
+      </ul>
+
+      <ul class="logos_footer">
+        <li><a href="/contato"><img class="logo_footer_filho" src="icone/local.png" alt="icone_mapa"></a>
+        <li><a href="https://api.whatsapp.com/send?phone=5511980802132" target="_blank"><img class="logo_footer_filho"
+              src="icone/whatsapp.png" alt="icone_whatsapp"></a></li>
+        <li><a href="mailto:leila76bolos@gmail.com"><img class="logo_footer_filho" src="icone/envelope.png"
+              alt="logo_envelope"></a></li>
+        <li><a href="https://www.instagram.com/leilaabolos/" target="_blank"><img class="logo_footer_filho"
+              src="icone/instagram.png" alt="instagram"></a></li>
+
+      </ul>
+    </nav>
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;700&family=Muli:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');/*font-family: "Bowlby One", sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap');
+
+/*font-family: "Bowlby One", sans-serif;*/
 * {
   margin: 0;
   padding: 0;
   font-size: 62.5%;
   font-family: "Playwrite GB S", cursive;
   scroll-behavior: smooth;
-  transition: all 0.3s ease-in-out; 
+  transition: all 0.3s ease-in-out;
 }
 
 
@@ -16,15 +18,18 @@
 /* style.css */
 
 #cardapio {
-  font-size: 200%; /* Define o tamanho da fonte base para o cardápio como 100% do padrão */
+  font-size: 200%;
+  /* Define o tamanho da fonte base para o cardápio como 100% do padrão */
 }
 
 #cardapio .card .card-title {
-  font-size: 1.5rem; /* Ajuste o tamanho do título do card */
+  font-size: 1.5rem;
+  /* Ajuste o tamanho do título do card */
 }
 
 #cardapio .card .card-text {
-  font-size: 1rem; /* Ajuste o tamanho do texto do card */
+  font-size: 1rem;
+  /* Ajuste o tamanho do texto do card */
 }
 
 
@@ -38,7 +43,6 @@ main {
   min-height: 75vh;
   /*de "height para min-height deixa a altura da página flexível e evita o espaço sobrando -mm*/
   text-align: center;
-  padding: 1% 8%;
   font-size: 4rem;
 }
 
@@ -49,8 +53,10 @@ main h1 {
 }
 
 h3 {
-  font-size: 3rem;
+  text-align: center;
+  font-size: 4rem;
   padding: 1rem;
+  margin: auto;
 }
 
 .titulo_sobre {
@@ -97,6 +103,7 @@ p {
 .index_menu {
   position: fixed;
   left: 2rem;
+  top: 0;
   z-index: 99;
 }
 
@@ -133,7 +140,10 @@ a {
   font-size: 2rem;
 }
 
-
+#projetos{
+  width: 90vw;
+  margin: auto;
+}
 
 .carousel-item {
   height: 75vh;
@@ -218,7 +228,7 @@ a {
   display: flex;
   font-size: 5rem;
   color: white;
-  transition: all 0.3s ease-in-out; 
+  transition: all 0.3s ease-in-out;
 }
 
 .img_produtos_filho>div {
@@ -243,33 +253,37 @@ a {
 }
 
 
-.img_produtos_filho > a:hover {
+.img_produtos_filho>a:hover {
   transform: scale(1.1);
   text-decoration: none;
   font-size: 6rem;
   color: #ffffff;
   /* Efeito neon com múltiplas sombras */
-  text-shadow: 
-    0 0 1px #FF79BF, /* Sombra branca interna */
-    0 0 2px #FF79BF, 
+  text-shadow:
+    0 0 1px #FF79BF,
+    /* Sombra branca interna */
+    0 0 2px #FF79BF,
     0 0 3px #FF79BF,
-    0 0 4px #ff0084, /* Sombra rosa */
+    0 0 4px #ff0084,
+    /* Sombra rosa */
     0 0 6px #ff0084,
     0 0 8px #ff0084;
-  transition: all 0.3s ease-in-out; 
-}  
+  transition: all 0.3s ease-in-out;
+}
 
-.img_produtos_filho > div > a:hover{
+.img_produtos_filho>div>a:hover {
   transform: scale(1.1);
   text-decoration: none;
   font-size: 6rem;
   color: #ffffff;
   /* Efeito neon com múltiplas sombras */
-  text-shadow: 
-    0 0 1px #FF79BF, /* Sombra branca interna */
-    0 0 2px #FF79BF, 
+  text-shadow:
+    0 0 1px #FF79BF,
+    /* Sombra branca interna */
+    0 0 2px #FF79BF,
     0 0 3px #FF79BF,
-    0 0 4px #ff0084, /* Sombra rosa */
+    0 0 4px #ff0084,
+    /* Sombra rosa */
     0 0 6px #ff0084,
     0 0 8px #ff0084;
 }
@@ -304,14 +318,16 @@ a {
   text-decoration: none;
   color: #ffffff;
   font-size: 3rem;
-  text-shadow: 
-    0 0 1px #FF79BF, /* Sombra interna */
-    0 0 2px #FF79BF, 
+  text-shadow:
+    0 0 1px #FF79BF,
+    /* Sombra interna */
+    0 0 2px #FF79BF,
     0 0 3px #FF79BF,
-    0 0 4px #ff0084, /* Sombra rosa */
+    0 0 4px #ff0084,
+    /* Sombra rosa */
     0 0 6px #ff0084,
     0 0 8px #ff0084;
-  
+
 
 }
 
@@ -353,11 +369,13 @@ footer>nav>ul>li>a:hover {
   text-decoration: none;
   color: white;
   padding-bottom: 0.05rem;
-  text-shadow: 
-    0 0 1px #FF79BF, /* Sombra interna */
-    0 0 2px #FF79BF, 
+  text-shadow:
+    0 0 1px #FF79BF,
+    /* Sombra interna */
+    0 0 2px #FF79BF,
     0 0 3px #FF79BF,
-    0 0 4px #ff0084, /* Sombra rosa */
+    0 0 4px #ff0084,
+    /* Sombra rosa */
     0 0 6px #ff0084,
     0 0 8px #ff0084;
 }
@@ -524,6 +542,19 @@ form textarea {
   text-align: center;
 }
 
+/* table checkout */
+.table_checkout {
+  font-size: 6rem;
+  background-color: white;
+  width: 70vw;
+  margin: auto;
+  border-radius: 20px;
+}
+.table_checkout td, th{
+  padding: 4px;
+  
+}
+
 @media (max-width: 1027px) {
   #produtos_pai {
     flex-direction: column;
@@ -563,13 +594,14 @@ form textarea {
     width: 45%;
     font-size: 3rem;
   }
-   .titulo_sobre{
+
+  .titulo_sobre {
     text-align: center;
-   }
-  
-   .cardapio-item {
+  }
+
+  .cardapio-item {
     height: 25rem;
-   }
+  }
 
 }
 
@@ -589,7 +621,8 @@ form textarea {
   .index_menu {
     position: relative;
   }
-  main  h1{
+
+  main h1 {
     font-size: 4rem;
   }
 
@@ -686,21 +719,24 @@ form textarea {
     flex-direction: column;
     height: auto;
   }
+
   .img_produtos_filho div {
     flex-direction: column;
     width: 90vw;
     height: 50vh;
     margin: auto;
   }
+
   .img_produtos_filho>.img_1 {
     height: 25vh;
     width: 95%;
     font-size: 3rem;
-    margin-bottom:1rem ;
+    margin-bottom: 1rem;
     transform: translate(-2%);
   }
+
   .img_produtos_filho>.img_1:hover {
-   transform: scale(1);
+    transform: scale(1);
   }
 
   .img_produtos_filho>div>.img_2,
@@ -718,8 +754,8 @@ form textarea {
     padding: 1rem;
     text-align: justify;
     margin: auto;
-  } 
-  
+  }
+
   .button {
     position: absolute;
     right: 50%;
@@ -886,7 +922,7 @@ form textarea {
 
 /* Estilos para o botão do carrinho */
 #carrinho-menu img {
-  height: 3rem ; 
+  height: 3rem;
 }
 
 #abrirCarrinho {
@@ -896,9 +932,9 @@ form textarea {
   position: fixed;
   right: 2rem;
   bottom: 30rem;
-  background-color:#ff0084;
+  background-color: #ff0084;
   color: rgb(255, 255, 255);
-  border: none  ;
+  border: none;
   border-radius: 5px;
   font-size: 1.5rem;
   transition: ease-in-out 0.5;
@@ -1003,5 +1039,11 @@ form textarea {
     bottom: 30%;
     width: 90%;
     left: 5%;
+  }
+
+  .table_checkout {
+    font-size: 4.5rem;
+    width: 85vw;
+    margin: auto;
   }
 }
