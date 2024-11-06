@@ -1,11 +1,11 @@
-const express = require('express');
-const app = express();
-const mysql = require('mysql2');
-const session = require('express-session');
-const bodyParser = require('body-parser');
+  const express = require('express');
+  const app = express();
+  const mysql = require('mysql2');
+  const session = require('express-session');
+  const bodyParser = require('body-parser');
 
-// Configuração do banco de dados MySQL
-const conexao = require('./conexaobanco'); 
+  // Configuração do banco de dados MySQL
+  const conexao = require('./conexaobanco'); 
 
 // Configuração do Express
 app.use(express.static('public'));
