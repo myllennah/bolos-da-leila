@@ -137,15 +137,33 @@ app.post('/remove-from-cart', (req, res) => {
 // Rota para atualizar o carrinho
 app.post('/atualizar-carrinho', (req, res) => {
   req.session.cart = req.body.cart;
+
+  // Caso a quantidade seja editada, atualize a quantidade do item no carrinho da sessão
+  if (req.body.editQuantity) {
+    const productId = req.body.editQuantity.id;
+    const newQuantity = req.body.editQuantity.quantity;
+    const cartItem = req.session.cart.find(item => item.id === productId);
+    if (cartItem) {
+      cartItem.quantity = newQuantity;
+    }
+  }
+
   res.json({ message: 'Carrinho atualizado com sucesso!' }); 
 });
 
 // Rota para a página de checkout
 app.get('/checkout', (req, res) => {
-    // Renderiza a view 'checkout' com os itens do carrinho da session
-    res.render('checkout', { cartItems: req.session.cart || [] }); 
-  });
-  
+  // Calcula o total dos itens no carrinho
+  let total = 0;
+  if (req.session.cart) {
+    req.session.cart.forEach(item => {
+      total += item.price * item.quantity;
+    });
+  }
+
+  // Renderiza a view 'checkout' com os itens do carrinho da session
+  res.render('checkout', { cartItems: req.session.cart || [], total: total }); 
+});
 
 // Rota para página de erro 404
 app.use((req, res) => {
