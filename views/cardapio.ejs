@@ -49,14 +49,14 @@
 
   <main>
     <div class="container mt-5">
-      <h1 class="titulo_cardapio">Nosso Cardápio de Delícias</h1>
+      <h1 class="titulo_cardapio">Nosso Cardápio de Delícias . . .</h1>
       <div class="row">
         <% produtos.forEach(produto => { %>
           <div class="col-12 col-md-6 col-lg-4 mb-4">
             <div class="card">
               <img src="<%= produto.imagem %>" class="card-img-top" alt="<%= produto.nome %>">
               <div class="card-body">
-                <h5 class="card-title"><%= produto.nome %></h5>
+                <h4 class="card-title"><%= produto.nome %></h4>
                 <p class="card-text">R$ <%= parseFloat(produto.preco).toFixed(2) %></p>
                 <button class="btn btn-primary" onclick="addToCart('<%= produto.id %>', '<%= produto.nome %>', '<%= produto.preco %>')">Adicionar ao Carrinho</button>
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#detalhesModal<%= produto.id %>">Detalhes</button>

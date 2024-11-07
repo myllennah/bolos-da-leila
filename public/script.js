@@ -69,7 +69,7 @@ function updateCart() {
       const li = document.createElement('li');
       li.innerHTML = `
         ${item.name} - R$ ${item.price.toFixed(2)} x ${item.quantity} 
-        <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})">Remover</button>
+        <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})"> remover</button>
       `;
       itensCarrinho.appendChild(li);
       total += item.price * item.quantity;
