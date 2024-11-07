@@ -15,40 +15,15 @@
 
 <body class="icon-bg" id="top">
   <header>
-
-    <div class="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <ul class="menu">
-      <li> <a class="link_logo" href="#top"><img class="logo" src="logos/logo6.png" alt="logo_leilabolos" /></a></li>
-      <li> <a href="/"><img class="logo" src="logos/Bolos da Leila.png" style="width: 22rem;"
-            alt="logo_leilabolos" /></a></li>
-      <li></li>
-      <li></li>
-      <li><a href="/historia">História</a></li>
-      <li><a href="/cardapio">Cardápio</a></li>
-      <li><a href="/contato">Contato</a></li>
-      <li>
-        <!-- Carrinho no Menu (CORRIGIDO: adicionado data-target) -->
-        <div id="carrinho-menu">
-          <a href="#" data-toggle="modal" data-target="#carrinhoModal">
-            <img class="logo_menu" src="logos/carrinho-de-compras.png" alt="logo_carrinho" />
-          </a>
-        </div>
-
-        <a href="/login"><img class="logo_menu" src="logos/do-utilizador.png" alt="logo_perfil"></a>
-      </li>
-    </ul>
+    <%-include('./parciais/header.ejs') %>
   </header>
-
 
   <main style="overflow-x: hidden;">
     <!-- Formulário de contato -->
      <div class="pag-contato">
      <div class="form-contato">
       <h3>Faça a sua encomenda!</h3>
+      <p>Não encontrou exatamente o que procurava?<br>Fale conosco sobre seu pedido especial e surpreenda com um bolo sob medida para sua ocasião!</p>
       <form action="contato.php" method="POST">
         <div>
           <label for="nome">Nome</label>
@@ -65,14 +40,14 @@
         <button id="buttonEnviar">Fazer pedido</button>    
       </form>
      </div>
-  
-      <div class="mapa">
+
+       <!-- Mapa -->
+     <div class="mapa">
         <p>R. Maria Batista, 147<br>Jardim Neide, São Paulo</p>
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14616.710092887077!2d-46.7440156!3d-23.6696087!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5186619a2137%3A0xa4a58de34407d9e3!2sBolo%20da%20Leila!5e0!3m2!1spt-BR!2sbr!4v1727673976205!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
+     </div>
     </div>
-      
-    </main>
+  </main>
 
     <div class="modal fade" id="carrinhoModal" tabindex="-1" role="dialog" aria-labelledby="carrinhoModalLabel"
     aria-hidden="true">
@@ -97,23 +72,7 @@
   </div>
 
     <footer>
-      <nav class="direcao_footer">
-        <ul>
-          <li><a
-              href="https://www.google.com/maps/place/Bolo+da+Leila/@-23.669609,-46.744016,14z/data=!4m6!3m5!1s0x94ce5186619a2137:0xa4a58de34407d9e3!8m2!3d-23.6696087!4d-46.7440156!16s%2Fg%2F11gcz3kbft?hl=pt-BR&entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D"
-              target="_blank">Horário de atendimento:
-              seg a sáb das 9h às 18h.</a></li>
-        </ul>
-  
-        <ul class="logos_footer">
-          <li><a href="/contato"><img class="logo_footer_filho" src="icone/local.png" alt="icone_mapa"></a>
-          <li><a href="https://api.whatsapp.com/send?phone=5511980802132" target="_blank"><img class="logo_footer_filho" src="icone/whatsapp.png" alt="icone_whatsapp"></a></li>
-          <li><a href="mailto:leila76bolos@gmail.com"><img class="logo_footer_filho" src="icone/envelope.png" alt="logo_envelope"></a></li>
-          <li><a href="https://www.instagram.com/leilaabolos/" target="_blank"><img class="logo_footer_filho"
-                src="icone/instagram.png" alt="instagram"></a></li>
-  
-        </ul>
-      </nav>
+      <%-include('./parciais/footer.ejs') %>
     </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
