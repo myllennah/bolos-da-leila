@@ -58,6 +58,7 @@ app.get('/cardapio', (req, res) => {
   });
 });
 
+
 // Rota para a página de contato
 app.get('/contato', (req, res) => {
   res.render('contato');
@@ -90,10 +91,13 @@ app.post('/login', function (req, res) {
     var sql = "INSERT INTO cadastro (nome_cliente, email,telefone, senha) VALUES (?, ?, ?, ?)";
     conexao.query(sql, [nome_cliente, email, telefone, senha], function (error, result) {
       if (error) throw error;
-      res.send("Cliente cadastrado com sucesso! " + result.email); 
+      res.send("Cliente "+nome_cliente+" cadastrado com sucesso! Com o email:  " + email); 
+      console.log('Cadastrado com sucesso!');
     });
   });
 });
+
+
 
 // Rota para adicionar ao carrinho
 app.post('/add-to-cart', (req, res) => {
@@ -173,6 +177,8 @@ app.get('/checkout', (req, res) => {
   // Renderiza a view 'checkout' com os itens do carrinho da session
   res.render('checkout', { cartItems: req.session.cart || [], total: total }); 
 });
+
+
 
 // Rota para página de erro 404
 app.use((req, res) => {

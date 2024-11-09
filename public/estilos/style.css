@@ -13,24 +13,10 @@
 }
 
 
-/* teste */
 
-/* style.css */
 
-#cardapio {
-  font-size: 200%;
-  /* Define o tamanho da fonte base para o cardápio como 100% do padrão */
-}
 
-#cardapio .card .card-title {
-  font-size: 1.5rem;
-  /* Ajuste o tamanho do título do card */
-}
 
-#cardapio .card .card-text {
-  font-size: 1rem;
-  /* Ajuste o tamanho do texto do card */
-}
 
 
 /* teste */
@@ -146,10 +132,12 @@ a {
 
 #itensCarrinho>li {
   list-style-type: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
 }
 
-#projetos{
+#projetos {
   width: 90vw;
   margin: auto;
 }
@@ -393,17 +381,22 @@ footer>nav>ul>li>a:hover {
   display: none;
   flex-direction: column;
   justify-content: space-around;
-  width: 3rem;
-  height: 2rem;
+  align-items: center;
+  width: 4.5rem;
+  height: 3rem;
   cursor: pointer;
   z-index: 1001;
+  background-color: #FFC5DE;
+  border-radius: 5px;
+  padding: 2px;
 }
 
 .hamburger div {
-  width: 3rem;
-  height: 0.4rem;
-  background: white;
-  border-radius: 0.2rem;
+  width: 3.5rem;
+  height: 0.5rem;
+  background: rgb(255, 255, 255);
+  border-radius: 0.3rem;
+  border: #fffffff5 solid 1px;
 }
 
 /* Adição - pág contato */
@@ -562,9 +555,27 @@ form textarea {
   margin: auto;
   border-radius: 20px;
 }
-.table_checkout td, th{
+
+.table_checkout td,
+th {
   padding: 4px;
-  
+
+}
+
+/* cards cardapio */
+.titulo_cardapio{
+  font-size: 5rem;
+  margin: 6rem auto;
+}
+.card {
+  border: #007bff52 solid 2px;
+  overflow: hidden;
+  border-radius: 35px;
+
+}
+
+.card img {
+  height: 25rem;
 }
 
 @media (max-width: 1027px) {
@@ -611,9 +622,6 @@ form textarea {
     text-align: center;
   }
 
-  .cardapio-item {
-    height: 25rem;
-  }
 
 }
 
@@ -641,13 +649,15 @@ form textarea {
   .menu.active {
     position: fixed;
     display: flex;
-    top: 0;
-    width: 92vw;
+    left: 0.4rem;
+    top: 2px;
+    width: 98vw;
     margin-top: 0;
     background-color: #FFC5DE;
     height: auto;
     z-index: 1;
     border-bottom: 3px solid white;
+    margin: auto;
   }
 
   .logo {
@@ -669,10 +679,12 @@ form textarea {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #0000007a;
-    color: white;
+    background-color: #FFC5DE;
+    color: black;
+    height: 4rem;
     border-bottom: solid white 2px;
   }
+
 
   .logo {
     display: none;
@@ -838,50 +850,15 @@ form textarea {
 }
 
 /* Estilos para o cardápio */
-#cardapio {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.text-center {
-  color: white;
-  text-shadow: #ff0084 2px 2px 2px;
-}
-
-.cardapio-item {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  padding: 1rem 0;
-  border-bottom: 10px solid #ffffff4d;
-  border-right: 10px solid #ffffff4d;
-  align-items: center;
-  width: 25rem;
-  height: 40vh;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  color: white;
-  background-color: #FF79BF;
-  padding: 1rem;
-  border-radius: 20px;
-}
-
-.cardapio-item img {
-  width: 100%;
-  border-radius: 15px;
-}
 
 .preco {
   font-weight: bold;
 }
 
 .btn-info {
-  margin-top: 1rem;
+  margin: 0 auto
 }
+
 
 .modal-header,
 .modal-footer {
@@ -892,6 +869,10 @@ form textarea {
 .modal-body {
   background-color: aliceblue;
   color: black;
+  display: flex;
+  flex-direction: column;
+  font-size: large;
+  
 }
 
 .modal-img {
@@ -904,10 +885,18 @@ form textarea {
 
 /* Estilos para o modal com maior especificidade */
 .modal-dialog .modal-content .modal-title,
-.modal-dialog .modal-content .modal-body p,
-.modal-dialog .modal-content .modal-body button {
-  font-size: 1.6rem;
-  /* Define o tamanho da fonte para 2rem */
+.modal-dialog .modal-content ,
+.modal-dialog .modal-content  {
+  font-size: 3rem;
+  text-align: center;
+}.modal-body p{
+  font-size: 2rem;
+}
+.modal-body button{
+  font-size: 1rem;
+  border: white solid 1px;
+  border-radius: 5px;
+
 }
 
 /* Estilos para o carrinho */
@@ -938,22 +927,6 @@ form textarea {
 /* Estilos para o botão do carrinho */
 #carrinho-menu img {
   height: 3rem;
-}
-
-#abrirCarrinho {
-  height: 4rem;
-  width: 12rem;
-  padding: 0%;
-  position: fixed;
-  right: 2rem;
-  bottom: 30rem;
-  background-color: #ff0084;
-  color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 5px;
-  font-size: 1.5rem;
-  transition: ease-in-out 0.5;
-
 }
 
 /*milena*/
