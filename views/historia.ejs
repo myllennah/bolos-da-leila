@@ -15,74 +15,20 @@
 
 <body class="icon-bg" id="top">
   <header>
-
-    <div class="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <ul class="menu">
-      <li> <a class="link_logo" href="#top"><img class="logo" src="logos/logo6.png" alt="logo_leilabolos" /></a></li>
-      <li> <a href="/"><img class="logo" src="logos/Bolos da Leila.png" style="width: 22rem;"
-            alt="logo_leilabolos" /></a></li>
-      <li></li>
-      <li></li>
-      <li><a href="/historia">História</a></li>
-      <li><a href="/cardapio">Cardápio</a></li>
-      <li><a href="/contato">Contato</a></li>
-      <li>
-        <!-- Carrinho no Menu (CORRIGIDO: adicionado data-target) -->
-        <div id="carrinho-menu">
-          <a href="#" data-toggle="modal" data-target="#carrinhoModal">
-            <img class="logo_menu" src="logos/carrinho-de-compras.png" alt="logo_carrinho" />
-          </a>
-        </div>
-
-        <a href="/login"><img class="logo_menu" src="logos/do-utilizador.png" alt="logo_perfil"></a>
-      </li>
-    </ul>
+    <%-include('./parciais/header.ejs') %>
   </header>
-
 
   <main>
     <article class="historia">
       <h2 class="titulo_historia">Uma História de Sabores </h2>
       <br>
-      <p> Nossa loja tem uma história cheia de dedicação e paixão. Leila, nossa fundadora de 49 anos, começou na
-        confeitaria aos 17 e, desde então, nunca parou. Com mais de 30 anos de experiência, ela sempre fez questão de
-        criar vínculos com os clientes e aperfeiçoar suas receitas, ganhando a confiança e o carinho de todos.</p>
-      <p>Até 2023, Lucia fazia seus bolos em sua casa, que tinha apenas três cômodos. Essa proximidade com o lar
-        permitiu que ela desenvolvesse um toque pessoal em cada bolo e doce que saía da sua cozinha. Mas, finalmente,
-        ela conseguiu realizar um sonho antigo: mudou-se para um espaço próprio e mais amplo, onde pode criar com mais
-        liberdade e atender melhor seus clientes.</p>
-      <p>Hoje, nossa loja é o reflexo desse trabalho duro e carinho. Oferecemos bolos e doces personalizados, feitos com
-        ingredientes de alta qualidade e entregues rapidamente. Cada detalhe é pensado para tornar suas celebrações
-        ainda mais especiais. Venha nos visitar e faça parte dessa história doce e encantadora. Aqui, você encontrará
-        não apenas deliciosas sobremesas, mas também uma equipe dedicada a fazer cada momento valer a pena.</p>
+      <p> A <i>'Bolos da Leila'</i> tem uma história cheia de dedicação e paixão. Leila começou sua jornada na confeitaria aos 17 e, desde então, nunca parou. Com mais de 30 anos de experiência, ela sempre prezou por estabelecer uma relação próxima com os clientes e aprimorar constantemente suas receitas, ganhando assim a confiança da clientela.</p>
+      <p>Até 2023, Leila fazia seus bolos em sua casa modesta, de apenas três cômodos. Isso permitiu que ela desenvolvesse um toque pessoal em cada bolo e doce que saía da sua cozinha. No entanto, com o crescimento da demanda e o sonho de expandir, Leila finalmente conseguiu realizar um sonho antigo: mudou-se para um espaço próprio e mais amplo, onde pode criar com mais liberdade e atender melhor seus clientes.</p>
+      <p>Hoje, a loja é o reflexo desse trabalho duro e carinho. Oferecemos bolos e doces personalizados, feitos com ingredientes de alta qualidade e entregues rapidamentepara que suas comemorações sejam ainda mais especiais. Cada detalhe é cuidadosamente pensado para tornar suas celebrações ainda mais especiais. Visite nossa loja ou faça sua encomenda online e faça parte dessa história doce. Seja para um aniversário, casamento ou qualquer celebração, aqui você encontrará não apenas deliciosas sobremesas, mas também uma pessoa dedicada a fazer cada momento valer a pena.</p>
     </article>
   </main>
 
-    <div class="modal fade" id="carrinhoModal" tabindex="-1" role="dialog" aria-labelledby="carrinhoModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="carrinhoModalLabel">Seu Carrinho</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <ul id="itensCarrinho"></ul>
-          <p id="totalCarrinho">Total: R$ 0,00</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <a href="/checkout" class="btn btn-primary">Finalizar Compra</a>
-        </div>
-      </div>
-    </div>
-  </div>
+    
 
     <footer>
       <%-include('./parciais/footer.ejs') %>

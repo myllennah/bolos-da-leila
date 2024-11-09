@@ -63,6 +63,15 @@ app.get('/contato', (req, res) => {
   res.render('contato');
 });
 
+// Rota para a página teste de cardápio e produto
+app.get('/cardapioteste', (req, res) => {
+  res.render('cardapio2');
+});
+
+app.get('/produtoteste', (req, res) => {
+  res.render('produto');
+});
+
 // Rota para a página de login (GET)
 app.get('/login', (req, res) => {
   res.render('Login');

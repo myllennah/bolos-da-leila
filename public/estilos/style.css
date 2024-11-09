@@ -112,11 +112,20 @@ p {
 }
 
 .menu>li>a:hover {
-  border-bottom: rgb(0, 0, 0) solid 3px;
-  padding-bottom: .9rem;
-  transition: ease-in-out 0.2s;
+ 
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  font-size: 3rem;
+  color: #ffffff;
+  /* Efeito neon com múltiplas sombras */
+  text-shadow:
+    0 0 1px #FF79BF,
+    /* Sombra branca interna */
+    0 0 2px #FF79BF,
+    0 0 3px #FF79BF,
+    0 0 4px #ff0084,
+    /* Sombra rosa */
+    0 0 6px #ff0084,
+    0 0 8px #ff0084;
 }
 
 a {
@@ -414,6 +423,9 @@ footer>nav>ul>li>a:hover {
   justify-content: center;
   margin: 50% auto;
 
+}
+.material-symbols-outlined{
+  color: white;
 }
 
 
@@ -756,12 +768,12 @@ form textarea {
     margin: auto;
   }
 
-  .button {
+  /* .button {
     position: absolute;
     right: 50%;
     transform: translate(80%);
     margin: 2rem;
-  }
+  } */
 
 
   footer>nav>ul {
@@ -886,6 +898,9 @@ form textarea {
   width: 100%;
   height: auto;
 }
+
+/* modais para teste de cardapio */
+
 
 /* Estilos para o modal com maior especificidade */
 .modal-dialog .modal-content .modal-title,
