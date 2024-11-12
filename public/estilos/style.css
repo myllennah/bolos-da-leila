@@ -12,22 +12,13 @@
   transition: all 0.3s ease-in-out;
 }
 
-
-
-
-
-
-
-
-/* teste */
-
+/* configs gerais */
 body {
   background-color: #E4FBFF;
 }
 
 main {
   min-height: 75vh;
-  /*de "height para min-height deixa a altura da página flexível e evita o espaço sobrando -mm*/
   text-align: center;
   font-size: 4rem;
 }
@@ -38,6 +29,11 @@ main h1 {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
 }
 
+h2 {
+  font-size: 5rem;
+  margin: 10rem auto;
+}
+
 h3 {
   text-align: center;
   font-size: 4rem;
@@ -45,16 +41,10 @@ h3 {
   margin: auto;
 }
 
-.titulo_sobre {
+h5 {
   font-size: 3rem;
-  margin: 2rem
-}
-
-
-
-h2 {
-  font-size: 5rem;
-  margin: 10rem auto;
+  font-weight: bold;
+  text-wrap: nowrap;
 }
 
 p {
@@ -63,6 +53,63 @@ p {
   margin-bottom: 8%;
 }
 
+a {
+  font-size: 2.5rem;
+  color: black;
+  text-decoration: none;
+}
+
+
+.button {
+  background-color: #d6e4a4;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.425);
+  font-size: 2rem;
+  margin: 1rem;
+}
+
+/* #buttonEnviar {
+  background-color: #d6e4a4;
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding: 1.5rem;
+  margin: 1rem;
+  border: none;
+  border-radius: 1rem;
+} */
+
+.button:hover {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 2.5rem;
+  text-shadow:
+    0 0 1px #FFC5DE,
+    /* Sombra interna */
+    0 0 2px #FF79BF,
+    0 0 3px #FF79BF,
+    0 0 4px #ff0084,
+    /* Sombra rosa */
+    0 0 6px #ff0084,
+    0 0 8px #ff0084;
+}
+
+.icon-bg {
+  background-image: url(../img/bg-icons2.png);
+  background-repeat: repeat;
+  background-size: 35vw;
+}
+
+.icon-bg>img {
+  opacity: 0.1;
+}
+
+.material-symbols-outlined{
+  color: white;
+}
+
+/* header */
 .menu {
   display: flex;
   flex-direction: row;
@@ -79,7 +126,6 @@ p {
   width: 95vw;
   margin: auto;
   height: 75px;
-  /*escolher uma height? essa ou linha 33 -mm*/
   margin-top: 45px;
   margin-bottom: 35px;
   border-radius: 10px;
@@ -98,7 +144,6 @@ p {
 }
 
 .menu>li>a:hover {
- 
   text-decoration: none;
   font-size: 3rem;
   color: #ffffff;
@@ -114,12 +159,6 @@ p {
     0 0 8px #ff0084;
 }
 
-a {
-  font-size: 2.5rem;
-  color: black;
-  text-decoration: none;
-}
-
 .logo {
   width: 12rem;
 }
@@ -129,12 +168,110 @@ a {
   margin: 0;
 }
 
-
 #itensCarrinho>li {
   list-style-type: none;
   font-size: 1.5rem;
   display: flex;
   justify-content: space-between;
+}
+
+.link_logo:hover {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 4.5rem;
+  height: 3rem;
+  cursor: pointer;
+  z-index: 1001;
+  background-color: #FFC5DE;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.hamburger div {
+  width: 3.5rem;
+  height: 0.5rem;
+  background: rgb(255, 255, 255);
+  border-radius: 0.3rem;
+  border: #fffffff5 solid 1px;
+}
+
+/* Footer */
+footer {
+  list-style-type: none;
+  width: 100%;
+  background-color: #FFC5DE;
+  color: black;
+  border-top: 0.2rem solid rgb(0, 0, 0);
+  padding: 1%;
+  position: auto;
+}
+
+footer>nav>ul>li>a {
+  color: rgb(0, 0, 0);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: ease-in-out 0.1s;
+  font-size: 1.8rem;
+  margin: 1rem;
+}
+
+footer>nav>ul>.traco {
+  border-right: 1px solid #000000;
+  padding: 0 5vw 0 0;
+  text-align: center;
+}
+
+footer>nav>ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+footer>nav>ul>li>a:hover {
+  text-decoration: none;
+  color: white;
+  padding-bottom: 0.05rem;
+  text-shadow:
+    0 0 1px #FFC5DE,
+    /* Sombra interna */
+    0 0 2px #FF79BF,
+    0 0 3px #FF79BF,
+    0 0 4px #ff0084,
+    /* Sombra rosa */
+    0 0 6px #ff0084,
+    0 0 8px #ff0084;
+}
+
+.logos_footer {
+  display: flex;
+  align-items: center;
+}
+
+.direcao_footer {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo_footer_filho {
+  height: 4rem;
+  margin: 0;
+}
+
+
+/* Home */
+.titulo_sobre {
+  font-size: 3rem;
+  margin: 2rem
 }
 
 #projetos {
@@ -210,8 +347,6 @@ a {
   height: 65vh;
   width: 45vw;
   transition: ease-in-out .5s;
-
-
 }
 
 .img_produtos_filho>.img_1 {
@@ -249,7 +384,6 @@ a {
 
 }
 
-
 .img_produtos_filho>a:hover {
   transform: scale(1.1);
   text-decoration: none;
@@ -257,7 +391,7 @@ a {
   color: #ffffff;
   /* Efeito neon com múltiplas sombras */
   text-shadow:
-    0 0 1px #FF79BF,
+    0 0 1px #FFC5DE,
     /* Sombra branca interna */
     0 0 2px #FF79BF,
     0 0 3px #FF79BF,
@@ -275,7 +409,7 @@ a {
   color: #ffffff;
   /* Efeito neon com múltiplas sombras */
   text-shadow:
-    0 0 1px #FF79BF,
+    0 0 1px #FFC5DE,
     /* Sombra branca interna */
     0 0 2px #FF79BF,
     0 0 3px #FF79BF,
@@ -297,133 +431,14 @@ a {
   background: black url(../banners/brigadeiro.jpg) center/cover no-repeat;
 }
 
-.button {
-  background-color: #FFC5DE;
-  padding: 3%;
-  border-radius: 10px;
-  border: none;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.425);
-
-}
-
-.link_logo:hover {
-  text-decoration: none;
-  border-bottom: none;
-}
-
-.button:hover {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 3rem;
-  text-shadow:
-    0 0 1px #FF79BF,
-    /* Sombra interna */
-    0 0 2px #FF79BF,
-    0 0 3px #FF79BF,
-    0 0 4px #ff0084,
-    /* Sombra rosa */
-    0 0 6px #ff0084,
-    0 0 8px #ff0084;
-
-
-}
-
-
-
-footer {
-  list-style-type: none;
-  width: 100%;
-  background-color: #FFC5DE;
-  color: black;
-  text-align: left;
-  border-top: 0.2rem solid rgb(0, 0, 0);
-  padding: 1%;
-  position: auto;
-}
-
-footer>nav>ul>li>a {
-  color: rgb(0, 0, 0);
-  font-size: 1.2rem;
-  text-decoration: none;
-  transition: ease-in-out 0.1s;
-  font-size: 1.8rem;
-}
-
-footer>nav>ul>.traco {
-  border-right: 1px solid #000000;
-  padding: 0 5vw 0 0;
-  text-align: center;
-}
-
-footer>nav>ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  list-style-type: none;
-}
-
-footer>nav>ul>li>a:hover {
-  text-decoration: none;
-  color: white;
-  padding-bottom: 0.05rem;
-  text-shadow:
-    0 0 1px #FF79BF,
-    /* Sombra interna */
-    0 0 2px #FF79BF,
-    0 0 3px #FF79BF,
-    0 0 4px #ff0084,
-    /* Sombra rosa */
-    0 0 6px #ff0084,
-    0 0 8px #ff0084;
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  width: 4.5rem;
-  height: 3rem;
-  cursor: pointer;
-  z-index: 1001;
-  background-color: #FFC5DE;
-  border-radius: 5px;
-  padding: 2px;
-}
-
-.hamburger div {
-  width: 3.5rem;
-  height: 0.5rem;
-  background: rgb(255, 255, 255);
-  border-radius: 0.3rem;
-  border: #fffffff5 solid 1px;
-}
-
-/* Adição - pág contato */
-.icon-bg {
-  background-image: url(../img/bg-icons2.png);
-  background-repeat: repeat;
-  background-size: 35vw;
-}
-
-.icon-bg>img {
-  opacity: 0.1;
-}
-
 .projeto h1 {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 50% auto;
-
-}
-.material-symbols-outlined{
-  color: white;
 }
 
-
-
-
+/* Pág contato */
 .pag-contato {
   display: flex;
   flex-direction: row;
@@ -452,48 +467,16 @@ form label {
   text-align: left;
 }
 
-form input,
-form textarea {
+form input, form textarea {
   border-radius: 1rem;
-}
-
-.form-contato h5 {
-  font-size: 3rem;
-  font-weight: bold;
-  text-wrap: nowrap;
-}
-
-.login h5 {
-  font-size: 3rem;
-  font-weight: bold;
-  text-wrap: nowrap;
-}
-
-
-
-#buttonEnviar {
-  background-color: #d6e4a4;
-  font-size: 2.5rem;
-  font-weight: bold;
-  padding: 1.5rem;
-  margin: 1rem;
-  border: none;
-  border-radius: 1rem;
-  cursor: pointer;
 }
 
 .mapa {
-  font-family: 'Muli', sans-serif;
-  font-size: 2rem;
   border-left: 0.3rem black solid;
   padding: 5rem;
 }
 
-.mapa p {
-  font-family: 'Muli', sans-serif;
-  font-size: 2rem;
-}
-
+/* pág login */
 .login {
   border-left: #000000 4px solid;
   padding: 5%;
@@ -504,27 +487,7 @@ form textarea {
 
 }
 
-/* Fim da adição */
-
-.logos_footer {
-  width: 20rem;
-  display: flex;
-  align-items: center;
-
-}
-
-.direcao_footer {
-  flex-direction: row;
-  display: flex;
-
-  justify-content: space-between;
-}
-
-.logo_footer_filho {
-  height: 3rem;
-  margin: 0;
-}
-
+/* pág história */
 .historia {
   width: 70vw;
   font-size: 2.5rem;
@@ -604,7 +567,6 @@ th {
     width: 65%;
   }
 
-
   .img_produtos_filho>.img_1 {
     height: 95%;
     width: 30%;
@@ -621,8 +583,6 @@ th {
   .titulo_sobre {
     text-align: center;
   }
-
-
 }
 
 
@@ -685,7 +645,6 @@ th {
     border-bottom: solid white 2px;
   }
 
-
   .logo {
     display: none;
   }
@@ -736,7 +695,6 @@ th {
     height: auto;
     width: 90vw;
     overflow-x: hidden;
-
   }
 
   .img_produtos_filho {
@@ -844,8 +802,6 @@ th {
   #abrirCarrinho {
     right: 2rem;
     top: 0;
-
-
   }
 }
 
@@ -858,7 +814,6 @@ th {
 .btn-info {
   margin: 0 auto
 }
-
 
 .modal-header,
 .modal-footer {
@@ -881,8 +836,6 @@ th {
 }
 
 /* modais para teste de cardapio */
-
-
 /* Estilos para o modal com maior especificidade */
 .modal-dialog .modal-content .modal-title,
 .modal-dialog .modal-content ,
@@ -896,7 +849,6 @@ th {
   font-size: 1rem;
   border: white solid 1px;
   border-radius: 5px;
-
 }
 
 /* Estilos para o carrinho */
@@ -929,7 +881,6 @@ th {
   height: 3rem;
 }
 
-/*milena*/
 .listings {
   display: flex;
   flex-direction: row;
@@ -987,9 +938,7 @@ th {
 }
 
 @media screen and (max-width: 768px) {
-
-  p,
-  strong {
+  p, strong {
     text-align: center;
     font-size: 1.4rem;
   }
