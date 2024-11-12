@@ -83,7 +83,8 @@ a {
 .button:hover {
   text-decoration: none;
   color: #ffffff;
-  font-size: 2.5rem;
+  /* font-size: 2.5rem; */
+  transform: scale(1.1);
   text-shadow:
     0 0 1px #FFC5DE,
     /* Sombra interna */
@@ -145,8 +146,9 @@ a {
 
 .menu>li>a:hover {
   text-decoration: none;
+  flex-grow: 1;
   font-size: 3rem;
-  color: #ffffff;
+    color: #ffffff;
   /* Efeito neon com múltiplas sombras */
   text-shadow:
     0 0 1px #FF79BF,
@@ -220,7 +222,6 @@ footer>nav>ul>li>a {
   text-decoration: none;
   transition: ease-in-out 0.1s;
   font-size: 1.8rem;
-  margin: 1rem;
 }
 
 footer>nav>ul>.traco {
@@ -254,6 +255,7 @@ footer>nav>ul>li>a:hover {
 .logos_footer {
   display: flex;
   align-items: center;
+  gap: 2rem;
 }
 
 .direcao_footer {
@@ -551,7 +553,7 @@ th {
   }
 
   .sobre_produtos_filho {
-    width: 85%;
+    width: 100%;
   }
 
   .img_produtos_filho {
@@ -726,10 +728,6 @@ th {
     height: 70%;
     width: 90%;
     font-size: 3rem;
-  }
-
-  .sobre_produtos_filho h2 {
-    font-size: 5rem;
   }
 
   .sobre_produtos_filho {
