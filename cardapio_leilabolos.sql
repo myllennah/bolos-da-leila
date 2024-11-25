@@ -28,7 +28,7 @@ CREATE TABLE pedido (
     status_pedido VARCHAR(12) NOT NULL
 );
 
--- Insere alguns exemplos de produtos
+
 INSERT INTO produtos (nome, descricao, preco, imagem, categoria) VALUES
     ('Bolo Margherita', 'Bolo de baunilha com cobertura de cream cheese e morangos frescos, decorado com manjericão fresco. Uma explosão de frescor em cada fatia!', 35.00, 'imagens/bolo-margherita.jpg', 'bolos'),
     ('Bolo Floresta Negra', 'Bolo de chocolate com camadas de cerejas frescas, chantilly e raspas de chocolate. Um clássico irresistível com um toque de magia.', 38.00, 'imagens/bolo-floresta-negra.jpg', 'bolos'),
@@ -36,7 +36,7 @@ INSERT INTO produtos (nome, descricao, preco, imagem, categoria) VALUES
     ('Brigadeiro', 'O clássico brigadeiro, feito com chocolate em pó, leite condensado e manteiga. Irresistível!', 2.00, 'imagens/brigadeiro.jpg', 'doces'),
     ('Coxinha', 'Coxinha de frango com massa crocante e recheio saboroso. Um clássico brasileiro irresistível!', 5.00, 'imagens/coxinha.jpg', 'salgados');
 
--- Inserir clientes
+
 
 INSERT INTO `cadastro` ( `nome_cliente`, `email`, `telefone`, `senha`) VALUES
 ( 'Julia Melo Alves', 'julinhamelo@dayrep.com', '11960452493', 'LaeCh7sap'),

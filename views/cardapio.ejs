@@ -16,6 +16,7 @@
   <!-- Link para arquivo CSS personalizado -->
   <link rel="stylesheet" href="estilos/style.css" />
   <title>Leila Bolos - Cardapio </title>
+  <link rel="shortcut icon" href="../logos/logo6.png" type="image/x-icon">
 </head>
 
 <body id="top">
@@ -32,6 +33,7 @@
             <div class="card">
               <img src="<%= produto.imagem %>" class="card-img-top" alt="<%= produto.nome %>">
               <div class="card-body">
+<<<<<<< HEAD
                 <h5 class="card-title">
                   <%= produto.nome %>
                 </h5>
@@ -42,11 +44,6 @@
                   Carrinho</button>
                 <button type="button" class="btn btn-info" data-toggle="modal"
                   data-target="#detalhesModal<%= produto.id %>">Detalhes</button>
-
-                <!-- <h4 class="card-title"><%= produto.nome %></h4>
-                <p class="card-text">R$ <%= parseFloat(produto.preco).toFixed(2) %></p>
-                <button class="btn btn-primary" onclick="addToCart('<%= produto.id %>', '<%= produto.nome %>', '<%= produto.preco %>')">Adicionar ao Carrinho</button>
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#detalhesModal<%= produto.id %>">Detalhes</button> -->
               </div>
             </div>
           </div>
