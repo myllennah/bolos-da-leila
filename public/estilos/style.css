@@ -50,7 +50,7 @@ h5 {
 p {
   font-family: 'Muli';
   font-size: 1.8rem;
-  margin-bottom: 8%;
+  /* margin-bottom: 8%; */
 }
 
 a {
@@ -820,20 +820,18 @@ th {
   font-size: 1.5rem;
 }
 
-.modal-header,
-.modal-footer {
-  background-color: #D6E4A4;
+.modal-header, .modal-footer {
+  background-color: #FF79BF;
   color: black;
 }
 
 .modal-content{
-  width: 70vw;
+  width: 60vw;
   justify-self: center;
-  border-radius: 5rem;
 }
 
 .modal-info {
-  width: 45%;
+  width: 50%;
   margin: 5%;
 }
 
@@ -842,10 +840,15 @@ th {
   flex-direction: column;
 }
 
-.modal-form div {
-  width: 90%;
-  margin: 3rem 0;
-  font-size: 2rem;
+.modal-form div, option {
+  width: 95%;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  justify-self: center;
+}
+
+.modal-form textarea {
+  height: 20vh;
 }
 
 .modal-body {
