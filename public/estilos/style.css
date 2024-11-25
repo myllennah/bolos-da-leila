@@ -182,7 +182,6 @@ a {
   border-bottom: none;
 }
 
-
 .hamburger {
   display: none;
   flex-direction: column;
@@ -326,7 +325,7 @@ footer>nav>ul>li>a:hover {
   height: 120vh;
   padding: 3%;
   justify-content: space-around;
-  margin: auto;
+  /* margin: auto; */
   align-items: center;
   margin: auto;
 }
@@ -334,7 +333,6 @@ footer>nav>ul>li>a:hover {
 .sobre_produtos_filho {
   width: 25vw;
   font-size: 2.3rem;
-
 }
 
 .sobre_produtos_filho h2 {
@@ -533,14 +531,19 @@ th {
   margin: 6rem auto;
 }
 .card {
-  border: #007bff52 solid 2px;
+  border: #FFC5DE solid 2px;
   overflow: hidden;
   border-radius: 35px;
-
 }
 
 .card img {
   height: 25rem;
+  object-fit: cover;
+  object-position: top; 
+}
+
+.card-title{  
+  text-wrap: wrap;
 }
 
 @media (max-width: 1027px) {
@@ -736,12 +739,12 @@ th {
     margin: auto;
   }
 
-  /* .button {
-    position: absolute;
-    right: 50%;
-    transform: translate(80%);
-    margin: 2rem;
-  } */
+  .button {
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    width: 70%;
+  }
 
 
   footer>nav>ul {
@@ -809,28 +812,54 @@ th {
   font-weight: bold;
 }
 
-.btn-info {
-  margin: 0 auto
+.btn-info, .btn-primary {
+  margin: 0 auto;
+  background-color: #FFD07B;
+  border: #d6e4a4 solid 1px;
+  color: black;
+  font-size: 1.5rem;
 }
 
 .modal-header,
 .modal-footer {
-  background-color: rgb(0, 0, 0);
-  color: white;
+  background-color: #D6E4A4;
+  color: black;
+}
+
+.modal-content{
+  width: 70vw;
+  justify-self: center;
+  border-radius: 5rem;
+}
+
+.modal-info {
+  width: 45%;
+  margin: 5%;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form div {
+  width: 90%;
+  margin: 3rem 0;
+  font-size: 2rem;
 }
 
 .modal-body {
   background-color: aliceblue;
   color: black;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   font-size: large;
-  
 }
 
 .modal-img {
   width: 100%;
   height: auto;
+  margin-bottom: 5%;
 }
 
 /* modais para teste de cardapio */

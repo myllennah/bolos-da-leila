@@ -25,14 +25,13 @@
 
   <main>
     <div class="container mt-5">
-      <h1 class="titulo_cardapio">Nosso Cardápio de Delícias . . .</h1>
+      <h1 class="titulo_cardapio">Nosso Cardápio de Delícias...</h1>
       <div class="row">
         <% produtos.forEach(produto=> { %>
           <div class="col-12 col-md-6 col-lg-4 mb-4">
             <div class="card">
               <img src="<%= produto.imagem %>" class="card-img-top" alt="<%= produto.nome %>">
               <div class="card-body">
-<<<<<<< HEAD
                 <h5 class="card-title">
                   <%= produto.nome %>
                 </h5>
@@ -43,12 +42,11 @@
                   Carrinho</button>
                 <button type="button" class="btn btn-info" data-toggle="modal"
                   data-target="#detalhesModal<%= produto.id %>">Detalhes</button>
-=======
-                <h4 class="card-title"><%= produto.nome %></h4>
+
+                <!-- <h4 class="card-title"><%= produto.nome %></h4>
                 <p class="card-text">R$ <%= parseFloat(produto.preco).toFixed(2) %></p>
                 <button class="btn btn-primary" onclick="addToCart('<%= produto.id %>', '<%= produto.nome %>', '<%= produto.preco %>')">Adicionar ao Carrinho</button>
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#detalhesModal<%= produto.id %>">Detalhes</button>
->>>>>>> 4fd42d9b3550ce74f1c3f66a6a901753d4b44f53
+                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#detalhesModal<%= produto.id %>">Detalhes</button> -->
               </div>
             </div>
           </div>
@@ -67,11 +65,54 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <img src="<%= produto.imagem %>" alt="<%= produto.nome %>" class="img-fluid">
-                  <p>Descrição: <%= produto.descricao %>
+                  <div class="modal-info">
+                    <img src="<%= produto.imagem %>" alt="<%= produto.nome %>" class="img-fluid">
+                    <p>Descrição: <%= produto.descricao %>
+                    </p>
+                    <p>Preço: R$ <%= parseFloat(produto.preco).toFixed(2) %>
                   </p>
-                  <p>Preço: R$ <%= parseFloat(produto.preco).toFixed(2) %>
-                  </p>
+                  </div>
+                  <div class="modal-form">
+                    <form action="" method="POST" id="form-selecao">
+                      <div>
+                      <label for="tamanho">Selecione o tamanho do bolo</label>
+                      <select id="tamanho" name="tamanho" required>
+                        <option value="">Selecione...</option>
+                        <option value="1kg">1kg</option>
+                        <option value="2kg">2kg</option>
+                        <option value="3kg">3kg</option>
+                      </select>
+                      </div>
+                      
+                      <div>
+                      <label for="sabormassa">Selecione o sabor da massa</label>
+                      <select id="sabormassa" name="sabormassa" required>
+                        <option value="">Selecione...</option>
+                        <option value="baunilha">Baunilha</option>
+                        <option value="chocolate">Chocolate</option>
+                      </select>
+                      </div>
+
+                      <div>
+                      <label for="saborrecheio">Selecione o sabor do recheio</label>
+                      <select id="saborrecheio" name="saborrecheio" required>
+                        <option value="">Selecione...</option>
+                        <option value="brigadeiro">Brigadeiro</option>
+                        <option value="ninhomorango">Leite Ninho com morango</option>
+                        <option value="beijinho">Beijinho</option>
+                        <option value="limao">Mousse de limão</option>
+                        <option value="maracuja">Mousse de maracujá</option>
+                        <option value="docedeleite">Doce de Leite</option>
+                        <option value="docedeleiteameixa">Doce de Leite com ameixa</option>
+                      </select>
+                      </div>
+
+                      <div>
+                      <label for="obs">Observações</label>
+                      <textarea id="obs" name="obs"></textarea>
+                      </div>
+                    </form>
+                  </div>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>

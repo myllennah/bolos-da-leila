@@ -49,31 +49,9 @@
     </div>
   </main>
 
-    <div class="modal fade" id="carrinhoModal" tabindex="-1" role="dialog" aria-labelledby="carrinhoModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="carrinhoModalLabel">Seu Carrinho</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <ul id="itensCarrinho"></ul>
-          <p id="totalCarrinho">Total: R$ 0,00</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <a href="/checkout" class="btn btn-primary">Finalizar Compra</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-    <footer>
-      <%-include('./parciais/footer.ejs') %>
-    </footer>
+  <footer>
+     <%-include('./parciais/footer.ejs') %>
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
