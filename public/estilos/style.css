@@ -335,6 +335,10 @@ footer>nav>ul>li>a:hover {
   font-size: 2.3rem;
 }
 
+.sobre_produtos_filho p{
+  margin-bottom: 5%;
+}
+
 .sobre_produtos_filho h2 {
   font-size: 5rem;
 }
@@ -461,7 +465,7 @@ form div {
   font-size: 2rem;
 }
 
-form label {
+.form-contato label, .login label {
   font-family: 'Muli', sans-serif;
   font-size: 2rem;
   text-align: left;
@@ -832,23 +836,35 @@ th {
 
 .modal-info {
   width: 50%;
-  margin: 5%;
+  margin: 3%;
+}
+
+#preco {
+  font-family: 'Playwrite GB S';
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ff0084;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  margin: 3%;
 }
 
 .modal-form {
   display: flex;
   flex-direction: column;
+  border-left: 0.3rem black solid; 
+  padding: 0 3%;
 }
 
-.modal-form div, option {
+.modal-form div, option, label {
+  font-family: 'Muli';
   width: 95%;
-  margin: 1rem 0;
+  margin: 2% 0;
   font-size: 1.5rem;
   justify-self: center;
 }
 
 .modal-form textarea {
-  height: 20vh;
+  height: 15vh;
 }
 
 .modal-body {
@@ -856,7 +872,7 @@ th {
   color: black;
   display: flex;
   flex-direction: row;
-  font-size: large;
+  justify-content: space-around; 
 }
 
 .modal-img {
@@ -873,7 +889,8 @@ th {
   font-size: 3rem;
   text-align: center;
 }.modal-body p{
-  font-size: 2rem;
+  font-size: 1.5rem;
+  margin: 2rem 0;
 }
 .modal-body button{
   font-size: 1rem;
@@ -1012,5 +1029,22 @@ th {
     font-size: 4.5rem;
     width: 85vw;
     margin: auto;
+  }
+
+  .modal-content {    
+    width: 90vw;
+    align-self: center;
+  }
+
+  .modal-body {
+    flex-direction: column;
+  }
+
+  .modal-info {
+    width: 90%;
+  }
+
+  .modal-form {
+    border-left: none;
   }
 }

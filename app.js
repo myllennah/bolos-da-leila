@@ -180,7 +180,11 @@ app.get('/checkout', (req, res) => {
   res.render('checkout', { cartItems: req.session.cart || [], total: total }); 
 });
 
-
+// Rota para a página de admin
+app.get('/admin', (req, res) => {
+  console.log('Admin route triggered');
+  res.render('admin-produtos');
+});
 
 // Rota para página de erro 404
 app.use((req, res) => {

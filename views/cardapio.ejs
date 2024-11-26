@@ -37,11 +37,7 @@
                 <h5 class="card-title">
                   <%= produto.nome %>
                 </h5>
-                <p class="card-text">R$ <%= parseFloat(produto.preco).toFixed(2) %>
-                </p>
-                <button class="btn btn-primary"
-                  onclick="addToCart('<%= produto.id %>', '<%= produto.nome %>', '<%= produto.preco %>')">Adicionar ao
-                  Carrinho</button>
+                <p class="card-text">R$ <%= parseFloat(produto.preco).toFixed(2) %></p>
                 <button type="button" class="btn btn-info" data-toggle="modal"
                   data-target="#detalhesModal<%= produto.id %>">Detalhes</button>
               </div>
@@ -64,20 +60,18 @@
                 <div class="modal-body">
                   <div class="modal-info">
                     <img src="<%= produto.imagem %>" alt="<%= produto.nome %>" class="img-fluid">
-                    <p>Descrição: <%= produto.descricao %>
-                    </p>
-                    <p>Preço: R$ <%= parseFloat(produto.preco).toFixed(2) %>
-                  </p>
+                    <p><%= produto.descricao %></p>
                   </div>
                   <div class="modal-form">
+                    <p id="preco">R$ <%= parseFloat(produto.preco).toFixed(2) %></p>
                     <form action="" method="POST" id="form-selecao">
                       <div>
                       <label for="tamanho">Selecione o tamanho do bolo</label>
                       <select id="tamanho" name="tamanho" required>
                         <option value="">Selecione...</option>
-                        <option value="1kg">1kg</option>
-                        <option value="2kg">2kg</option>
-                        <option value="3kg">3kg</option>
+                        <option value="1kg" data-price="0">1kg</option>
+                        <option value="2kg" data-price="50">2kg</option>
+                        <option value="3kg" data-price="100">3kg</option>
                       </select>
                       </div>
                       
@@ -113,9 +107,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                  <button type="button" class="btn btn-primary"
-                    onclick="addToCart('<%= produto.id %>', '<%= produto.nome %>', '<%= produto.preco %>')">Adicionar ao
-                    Carrinho</button>
+                  <button type="button" class="btn btn-primary" onclick="addToCart('<%= produto.id %>', '<%= produto.nome %>', '<%= produto.preco %>')">Adicionar ao Carrinho</button>
                 </div>
               </div>
             </div>
@@ -158,5 +150,4 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="script.js"></script>
 </body>
-
 </html>

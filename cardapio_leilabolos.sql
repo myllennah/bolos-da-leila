@@ -29,13 +29,12 @@ CREATE TABLE pedido (
 );
 
 
-INSERT INTO produtos (nome, descricao, preco, imagem, categoria) VALUES
-    ('Bolo Margherita', 'Bolo de baunilha com cobertura de cream cheese e morangos frescos, decorado com manjericão fresco. Uma explosão de frescor em cada fatia!', 35.00, 'imagens/bolo-margherita.jpg', 'bolos'),
-    ('Bolo Floresta Negra', 'Bolo de chocolate com camadas de cerejas frescas, chantilly e raspas de chocolate. Um clássico irresistível com um toque de magia.', 38.00, 'imagens/bolo-floresta-negra.jpg', 'bolos'),
-    ('Bolo de Queijo c/ Chocolate', 'Bolo de queijo cremoso com gotas de chocolate meio amargo. Simplesmente irresistível!', 34.00, 'imagens/bolo-queijo-chocolate.jpg', 'bolos'),
-    ('Brigadeiro', 'O clássico brigadeiro, feito com chocolate em pó, leite condensado e manteiga. Irresistível!', 2.00, 'imagens/brigadeiro.jpg', 'doces'),
-    ('Coxinha', 'Coxinha de frango com massa crocante e recheio saboroso. Um clássico brasileiro irresistível!', 5.00, 'imagens/coxinha.jpg', 'salgados');
-
+INSERT INTO `produtos` (`id`, `nome`, `descricao`, `preco`, `imagem`, `categoria`) VALUES
+(1, 'Bolo com tema de futebol', 'Tenha um bolo com o seu time do coração!', 50.00, '../img/time1.jpeg', 'bolos'),
+(2, 'Bolo com decoração simples', 'Elegância e sabor se encontram em nossos bolos clássicos com frutas e flores. Decorados com flores delicadas e frutas frescas, esses bolos são perfeitos para qualquer ocasião especial. Escolha o tamanho, o sabor da massa e o recheio, e encante seus convidados com a beleza e o frescor dessa combinação clássica!', 50.00, '../img/chocolate.jpeg', 'bolos'),
+(3, 'Bolo Infantil', 'Transforme a festa em um mundo de fantasia! Com decorações encantadoras, cores pastéis e detalhes mágicos, esses bolos são feitos para encantar e surpreender. Personalize o tamanho, o sabor da massa e o recheio, e adicione um toque de magia ao seu evento!', 50.00, '../img/crianca1.jpeg', 'bolos'),
+(4, 'Brigadeiro', 'O clássico brigadeiro, feito com chocolate em pó, leite condensado e manteiga. Irresistível!', 2.00, 'imagens/brigadeiro.jpg', 'doces'),
+(5, 'Coxinha', 'Coxinha de frango com massa crocante e recheio saboroso. Um clássico brasileiro irresistível!', 5.00, 'imagens/coxinha.jpg', 'salgados');
 
 
 INSERT INTO `cadastro` ( `nome_cliente`, `email`, `telefone`, `senha`) VALUES
