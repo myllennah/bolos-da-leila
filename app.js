@@ -80,6 +80,11 @@ app.get('/login', (req, res) => {
   res.render('Login');
 });
 
+// Rota para a página de recuperação (GET)
+app.get('/recuperacao', (req, res) => {
+  res.render('recuperacao');
+});
+
 // Rota para processar o cadastro de cliente (POST)
 app.post('/login', function (req, res) {
   var nome_cliente = req.body.nome;
