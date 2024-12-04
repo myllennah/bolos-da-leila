@@ -1,3 +1,25 @@
+// Alterar o preço do produto de acordo com o tamanho
+function alterarPreco(produtoId) {
+  const tamanho = document.getElementById(`tamanho${produtoId}`);
+  console.log("tamanho:", tamanho);
+
+  const selectedOption = tamanho.options[tamanho.selectedIndex];
+  console.log("opção escolhida: ", selectedOption);
+
+  const preco = document.getElementById(`preco${produtoId}`);
+  const precoBase = parseFloat(preco.getAttribute("data-base-price"));
+
+  const variacaoPreco = parseFloat(selectedOption.getAttribute("data-price"));
+  console.log("adicional:", variacaoPreco);
+
+  const precoFinal = precoBase + variacaoPreco;
+  console.log('final:', precoFinal);
+
+  preco.textContent = `R$ ${precoFinal.toFixed(2)}`;
+  localStorage.setItem('updatedPrice', precoFinal.toFixed(2));
+};
+
+//Adicionar ao carrinho
 function addToCart(productId, productName, productPrice) {
   console.log("Adicionando ao carrinho:", productId, productName, productPrice);
   let cart = JSON.parse(localStorage.getItem('cart')) || []; // Usando localStorage
@@ -55,6 +77,7 @@ function removeFromCart(index) {
 // Função para atualizar o carrinho na tela (modal)
 function updateCart() {
   let cart = JSON.parse(localStorage.getItem('cart')) || []; // Usando localStorage
+  const updatedPrice = parseFloat(localStorage.getItem('updatedPrice'));
   console.log("Carrinho:", JSON.stringify(cart, null, 2));
 
   const itensCarrinho = document.getElementById('itensCarrinho');
@@ -67,6 +90,7 @@ function updateCart() {
     cart.forEach((item, index) => {
       console.log("Tipo de item.price:", typeof item.price);
       const li = document.createElement('li');
+      const itemPrice = !isNaN(updatedPrice) ? updatedPrice : item.price;
       li.innerHTML = `
         ${item.name} - R$ ${item.price.toFixed(2)} x ${item.quantity} 
         <button class="btn btn-danger btn-sm" onclick="removeFromCart(${index})"> remover</button>
@@ -108,70 +132,4 @@ document.addEventListener('DOMContentLoaded', function () {
   $('#carrinhoModal').on('shown.bs.modal', function () {
     updateCart();
   });
-});
-
-// Alterar o preço do produto de acordo com o tamanho 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log("DOM fully loaded and parsed");
-
-  // Function to update the price based on the selected size
-  function alterarPreço() {
-    // Get the 'tamanho' select element
-    const tamanho = document.getElementById('tamanho');
-    console.log("tamanho element:", tamanho);
-
-    if (!tamanho) {
-      console.error("Error: 'tamanho' element not found.");
-      return;
-    }
-
-    // Check if a valid option is selected (not the first empty option)
-    const selectedOption = tamanho.options[tamanho.selectedIndex];
-    if (selectedOption.value === "") {
-      console.error("Error: No size selected (empty option).");
-      return; // Exit if no size is selected
-    }
-
-    // Get the selected option's data-price attribute
-    const precoTamanho = parseFloat(selectedOption.getAttribute('data-price'));
-    console.log("preço tamanho:", precoTamanho);
-
-    if (isNaN(precoTamanho)) {
-      console.error("Error: Invalid preçoTamanho value:", precoTamanho);
-      return;
-    }
-
-    // Get the base price from EJS (Ensure it's a valid number)
-    const precoBase = parseFloat('<%= produto.preco %>');
-    console.log("preco base:", precoBase);
-
-    if (isNaN(precoBase)) {
-      console.error("Error: Invalid precoBase value:", precoBase);
-      return;
-    }
-
-    // Calculate the total price
-    const totalPrice = precoBase + precoTamanho;
-    console.log('preço total:', totalPrice);
-
-    // Update the displayed price in the modal
-    const precoElement = document.getElementById('preco');
-    if (precoElement) {
-      precoElement.textContent = `Preço: R$ ${totalPrice.toFixed(2)}`;
-    } else {
-      console.error("Error: 'preco' element not found.");
-    }
-  }
-
-  // Add event listener to the 'tamanho' select element to update price on change
-  const tamanhoElement = document.getElementById('tamanho');
-  if (tamanhoElement) {
-    tamanhoElement.addEventListener('change', alterarPreço);
-    console.log("Event listener added for 'tamanho' change.");
-  } else {
-    console.error("Error: 'tamanho' element not found.");
-  }
-
-  // Call alterarPreço on page load to show the initial price
-  alterarPreço();
 });

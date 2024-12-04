@@ -27,13 +27,14 @@
   <main>
     <div class="container mt-5">
       <h1 class="titulo_cardapio">Nosso Cardápio de Delícias...</h1>
+      <!-- Lista de produtos -->
       <div class="row">
         <% produtos.forEach(produto=> { %>
           <div class="col-12 col-md-6 col-lg-4 mb-4">
             <div class="card">
               <img src="<%= produto.imagem %>" class="card-img-top" alt="<%= produto.nome %>">
               <div class="card-body">
-<<<<<<< HEAD
+
                 <h5 class="card-title">
                   <%= produto.nome %>
                 </h5>
@@ -63,11 +64,11 @@
                     <p><%= produto.descricao %></p>
                   </div>
                   <div class="modal-form">
-                    <p id="preco">R$ <%= parseFloat(produto.preco).toFixed(2) %></p>
+                    <p class="preco-modal" id="preco<%= produto.id %>" data-base-price="<%= parseFloat(produto.preco).toFixed(2) %>">R$ <%= parseFloat(produto.preco).toFixed(2) %></p>
                     <form action="" method="POST" id="form-selecao">
                       <div>
-                      <label for="tamanho">Selecione o tamanho do bolo</label>
-                      <select id="tamanho" name="tamanho" required>
+                        <label for="tamanho<%= produto.id %>">Selecione o tamanho do bolo</label>
+                        <select id="tamanho<%= produto.id %>" name="tamanho" onchange="alterarPreco(<%= produto.id %>)" required>
                         <option value="">Selecione...</option>
                         <option value="1kg" data-price="0">1kg</option>
                         <option value="2kg" data-price="50">2kg</option>

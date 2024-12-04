@@ -839,15 +839,6 @@ th {
   margin: 3%;
 }
 
-#preco {
-  font-family: 'Playwrite GB S';
-  font-size: 3rem;
-  font-weight: bold;
-  color: #ff0084;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-  margin: 3%;
-}
-
 .modal-form {
   display: flex;
   flex-direction: column;
@@ -886,16 +877,26 @@ th {
 .modal-dialog .modal-content .modal-title,
 .modal-dialog .modal-content ,
 .modal-dialog .modal-content  {
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-align: center;
-}.modal-body p{
-  font-size: 1.5rem;
-  margin: 2rem 0;
+  text-wrap: wrap;
 }
-.modal-body button{
+.modal-body p {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+.modal-body button {
   font-size: 1rem;
   border: white solid 1px;
   border-radius: 5px;
+}
+
+.preco-modal {
+  font-family: 'Playwrite GB S';
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ff0084;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Estilos para o carrinho */
@@ -977,6 +978,16 @@ th {
   transform: scale(1.05);
 }
 
+.fotoperfil {
+  height: 50vh;
+  width: auto;
+  margin: 3% auto;
+}
+
+i {
+  font-size: 1.5rem;
+}
+
 .product:hover h4 {
   bottom: 35%;
   transition: ease-in-out 0.5s;
@@ -1046,5 +1057,9 @@ th {
 
   .modal-form {
     border-left: none;
+  }
+
+  .modal-title h5 {
+    font-size: 1rem;
   }
 }
