@@ -858,6 +858,10 @@ th {
   height: 15vh;
 }
 
+.recuperacao_senha {
+  height: 5vh;
+}
+
 .modal-body {
   background-color: aliceblue;
   color: black;
