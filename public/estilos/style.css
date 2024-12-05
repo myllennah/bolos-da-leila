@@ -862,6 +862,12 @@ th {
   height: 5vh;
 }
 
+.recuperacao_link {
+  font-size: 2vh;
+  padding: 1vh;
+  text-decoration: underline;
+}
+
 .modal-body {
   background-color: aliceblue;
   color: black;
