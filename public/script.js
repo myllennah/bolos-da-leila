@@ -21,7 +21,7 @@ function alterarPreco(produtoId) {
 
 // Adicionar ao carrinho
 function addToCart(productId, productName, productBasePrice) {
-  //conferir se usuário selecionou opções
+  //confere se usuário selecionou opções
   const tamanho = document.getElementById(`tamanho${productId}`);
   const sabormassa = document.getElementById(`sabormassa${productId}`);
   const saborrecheio = document.getElementById(`saborrecheio${productId}`);
@@ -30,8 +30,7 @@ function addToCart(productId, productName, productBasePrice) {
     alert("Por favor, selecione todas as opções antes de adicionar ao carrinho.");
     return;
   }
-  
-  // adicionando ao carrinho
+  // adiciona ao carrinho
   const precoElement = document.getElementById(`preco${productId}`);
   const currentPrice = parseFloat(precoElement.getAttribute("data-current-price")) || parseFloat(productBasePrice);
 
@@ -76,6 +75,17 @@ function addToCart(productId, productName, productBasePrice) {
   localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart to localStorage
   updateCart();
   alert(`${productName} adicionado ao carrinho!`);
+
+  // fecha o modal
+  const modal = document.getElementById(`detalhesModal${productId}`);
+  if (modal) { modal.style.display = 'none';
+    modal.classList.remove('show');
+  }
+  const backdrop = document.querySelector('.modal-backdrop');
+  if (backdrop) {
+    backdrop.remove();
+  }
+  document.body.classList.remove('modal-open')
 }
 
 // Função para atualizar o carrinho na tela (modal)

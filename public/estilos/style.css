@@ -525,14 +525,13 @@ form input, form textarea {
 
 .table_checkout td,
 th {
-  padding: 4px;
-
+  padding: 2rem;
 }
 
 /* cards cardapio */
 .titulo_cardapio{
   font-size: 5rem;
-  margin: 6rem auto;
+  margin: 6rem auto 0 auto;
 }
 .card {
   border: #FFC5DE solid 2px;
@@ -548,6 +547,11 @@ th {
 
 .card-title{  
   text-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
 
 @media (max-width: 1027px) {
@@ -880,6 +884,14 @@ th {
   width: 100%;
   height: auto;
   margin-bottom: 5%;
+}
+
+#bolos, #doces-salgados {
+  margin: 5rem auto;
+}
+
+#bolos h3, #doces-salgados h3 {
+  margin: 2rem auto;
 }
 
 /* modais para teste de cardapio */
