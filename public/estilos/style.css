@@ -170,12 +170,12 @@ a {
   margin: 0;
 }
 
-#itensCarrinho>li {
+/* #itensCarrinho>li {
   list-style-type: none;
   font-size: 1.5rem;
   display: flex;
   justify-content: space-between;
-}
+} */
 
 .link_logo:hover {
   text-decoration: none;
@@ -912,8 +912,8 @@ th {
 /* Estilos para o carrinho */
 #carrinho {
   list-style-type: none;
-  height: 70vh;
-  width: 70vw;
+  height: 80vh;
+  width: 80vw;
   position: fixed;
   bottom: 50%;
   right: 50%;
@@ -939,6 +939,23 @@ th {
   height: 3rem;
 }
 
+/* Tabela carrinho */
+#tabelaCarrinho tbody td {
+  font-family: 'Muli', sans-serif;
+  font-size: 2rem;
+  text-wrap: wrap;
+}
+
+#tabelaCarrinho thead, #tabelaCarrinho tfoot {
+  font-size: 4rem;
+}
+
+#tabelaCarrinho small {
+  font-family: 'Muli', sans-serif;
+  font-size: 1.5rem;
+}
+
+/* Cardápio */
 .listings {
   display: flex;
   flex-direction: row;

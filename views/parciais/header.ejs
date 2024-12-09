@@ -32,12 +32,30 @@
         <div class="modal-header">
           <h5 class="modal-title" id="carrinhoModalLabel">Seu Carrinho</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
+            <span class="material-symbols-outlined">cancel</span>
           </button>
         </div>
         <div class="modal-body">
-          <ul id="itensCarrinho"></ul>
-          <p id="totalCarrinho">Total: R$ 0,00</p>
+          <table id="tabelaCarrinho" class="table">
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Preço Unitário</th>
+                <th>Quantidade</th>
+                <th>Subtotal</th>
+                <th>Ação</th>
+              </tr>
+            </thead>
+            <tbody id="itensCarrinho"></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3">Total:</td>
+                <td id="totalCarrinho" colspan="2">R$ 0,00</td>
+              </tr>
+            </tfoot>
+          </table>
+          <!-- <ul id="itensCarrinho"></ul>
+          <p id="totalCarrinho">Total: R$ 0,00</p> -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>

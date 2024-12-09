@@ -39,13 +39,21 @@
               <tr>
                 <td>
                   <%= item.name %>
+                  <% if (item.options) { %>
+                    <br>
+                    <small>
+                      Tamanho: <%= item.options.tamanho %><br>
+                      Sabor Massa: <%= item.options.sabormassa %><br>
+                      Sabor Recheio: <%= item.options.saborrecheio %>
+                    </small>
+                  <% } %>
                 </td>
-                <td>R$ <%= item.price %>
+                <td>R$ <%= item.price.toFixed(2) %>
                 </td>
                 <td>
                   <%= item.quantity %>
                 </td>
-                <td>R$ <%= (item.price * item.quantity) %>
+                <td>R$ <%= (item.price * item.quantity).toFixed(2) %>
                 </td>
               </tr>
               <% }); %>
