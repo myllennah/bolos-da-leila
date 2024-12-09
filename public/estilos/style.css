@@ -491,6 +491,42 @@ form input, form textarea {
 
 }
 
+.pagcliente_corpo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.pagcliente_dados {
+  display: flex;
+  flex-direction: column;
+}
+
+.pagcliente_dados> button, .pagcliente_pedidos> button {
+  padding: 1.5vh;
+  font-size: 3rem;
+  background-color: #d6e4a4;
+  border-radius: 1rem;
+  border: none;
+  margin: 2rem;
+}
+
+.pagcliente_pedidos {
+  display: flex;
+  flex-direction: column;
+  border-left-color:#000000 25px;
+}
+
+#pagcliente_pedidos {
+  margin: 0rem;
+  padding-bottom: 7vh;
+  text-decoration: underline 0.5vh;
+}
+
+.pagcliente_titulo {
+  padding-bottom: 6rem;
+}
+
 /* pág história */
 .historia {
   width: 70vw;
