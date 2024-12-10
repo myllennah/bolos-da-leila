@@ -112,7 +112,7 @@
                 </div>
                 <div class="modal-footer">
                   <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button> -->
-                  <button type="button" class="btn btn-primary" onclick="addToCart('<%= produto.id %>', '<%= produto.nome %>', '<%= produto.preco %>')">Adicionar ao Carrinho</button>
+                  <button type="button" class="btn btn-primary" onclick="addToCartOptions('<%= produto.id %>', '<%= produto.nome %>', '<%= produto.preco %>')">Adicionar ao Carrinho</button>
                 </div>
               </div>
             </div>
@@ -160,7 +160,7 @@
                         </div>
                         <div class="modal-footer">
                           <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button> -->
-                          <button type="button" class="btn btn-primary" onclick="addToCart('<%= produto.id %>', '<%= produto.nome %>', '<%= produto.preco %>')">Adicionar ao Carrinho</button>
+                          <button type="button" class="btn btn-primary" onclick="addToCartNoOptions('<%= produto.id %>', '<%= produto.nome %>', '<%= produto.preco %>')">Adicionar ao Carrinho</button>
                         </div>
                       </div>
                     </div>

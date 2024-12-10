@@ -19,67 +19,51 @@ function alterarPreco(produtoId) {
   preco.setAttribute("data-current-price", precoFinal); // Store the updated price for use in cart functions
 }
 
-// Adicionar ao carrinho
-function addToCart(productId, productName, productBasePrice, productCategory) {
-  if (productCategory === 'bolos') {
-    addToCartOptions(productId, productName, productBasePrice);
-  } else {
-    addToCartNoOptions(productId, productName, productBasePrice);
-  }
-}
-
+// Adicionar ao carrinho bolos com opções
 function addToCartOptions(productId, productName, productBasePrice) {
+  //confere se usuário selecionou opções
   const tamanho = document.getElementById(`tamanho${productId}`);
   const sabormassa = document.getElementById(`sabormassa${productId}`);
   const saborrecheio = document.getElementById(`saborrecheio${productId}`);
-
-  console.log("Opções:", tamanho, sabormassa, saborrecheio);
 
   if (!tamanho.value || !sabormassa.value || !saborrecheio.value) {
     alert("Por favor, selecione todas as opções antes de adicionar ao carrinho.");
     return;
   }
 
-  const options = {
+  // adicionando ao carrinho
+  const precoElement = document.getElementById(`preco${productId}`);
+  const currentPrice = parseFloat(precoElement.getAttribute("data-current-price")) || parseFloat(productBasePrice);
+
+  console.log("Adicionando ao carrinho:", productId, productName, currentPrice);
+
+  let cart = JSON.parse(localStorage.getItem('cart')) || []; // busca o carrinho no localStorage
+
+  // busca opções selecionadas
+  const opcoesSelecionadas = {
     tamanho: tamanho.value,
     sabormassa: sabormassa.value,
     saborrecheio: saborrecheio.value
   };
 
-  console.log(options);
-
-  addProductToCart(productId, productName, productBasePrice, options);
-  return
-}
-
-function addToCartNoOptions(productId, productName, productBasePrice) {
-  addProductToCart(productId, productName, productBasePrice);
-}
-
-function addProductToCart(productId, productName, productBasePrice, options = {}) {
-  const precoElement = document.getElementById(`preco${productId}`);
-  const currentPrice = parseFloat(precoElement.getAttribute("data-current-price")) || parseFloat(productBasePrice);
-
-  console.log("Adicionando ao carrinho:", productId, productName, currentPrice, options);
-
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-  let existingProduct = cart.find(item => item.id === productId && JSON.stringify(item.options) === JSON.stringify(options));
+  // verifica se o item já existe no carrinho
+  let existingProduct = cart.find(item => item.id === productId && JSON.stringify(item.options) === JSON.stringify(opcoesSelecionadas));
 
   if (existingProduct) {
     existingProduct.quantity++;
     existingProduct.price = currentPrice;
   } else {
-    cart.push({ id: productId, name: productName, price: currentPrice, quantity: 1, options: options });
+    cart.push({ id: productId, name: productName, price: currentPrice, quantity: 1, options: opcoesSelecionadas });
   }
 
+  // Update the cart in the server session via AJAX
   fetch('/add-to-cart', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      produtoId: productId,
-      ...options
-    }),
+    body: JSON.stringify({ produtoId: productId,
+      tamanho,
+      sabormassa,
+      saborrecheio, }),
   })
     .then(response => response.json())
     .then(data => {
@@ -89,11 +73,11 @@ function addProductToCart(productId, productName, productBasePrice, options = {}
       console.error("Erro ao atualizar o carrinho:", error);
     });
 
-  localStorage.setItem('cart', JSON.stringify(cart));
+  localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart to localStorage
   updateCart();
   alert(`${productName} adicionado ao carrinho!`);
 
-  // Close the modal and remove the backdrop
+  // fecha o modal
   const modal = document.getElementById(`detalhesModal${productId}`);
   if (modal) {
     modal.style.display = 'none';
@@ -106,6 +90,70 @@ function addProductToCart(productId, productName, productBasePrice, options = {}
   }
 
   document.body.classList.remove('modal-open');
+}
+
+// Adiciona ao carrinho itens sem opções a selecionar
+function addToCartNoOptions(productId, productName, productPrice) {
+  console.log("Adicionando ao carrinho:", productId, productName, productPrice);
+  let cart = JSON.parse(localStorage.getItem('cart')) || []; // Usando localStorage
+  let existingProduct = cart.find(item => item.id === productId);
+  if (existingProduct) {
+    existingProduct.quantity++;
+  } else {
+    const priceAsNumber = parseFloat(productPrice);
+    cart.push({ id: productId, name: productName, price: priceAsNumber, quantity: 1 });
+  }
+  // Atualiza o carrinho na sessão do servidor via AJAX
+  fetch('/atualizar-carrinho', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ cart: cart })
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.message);
+    })
+    .catch(error => {
+      console.error('Erro ao atualizar o carrinho:', error);
+    });
+  localStorage.setItem('cart', JSON.stringify(cart)); // Usando localStorage
+  updateCart();
+  alert(`${productName} adicionado ao carrinho!`);
+  
+  // fecha o modal
+  const modal = document.getElementById(`detalhesModal${productId}`);
+  if (modal) {
+    modal.style.display = 'none';
+    modal.classList.remove('show');
+  }
+
+  const backdrop = document.querySelector('.modal-backdrop');
+  if (backdrop) {
+    backdrop.remove();
+  }
+
+  document.body.classList.remove('modal-open');
+}
+
+// Função para remover um item do carrinho
+function removeFromCart(index) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || []; // Usando localStorage
+  cart.splice(index, 1);
+  // Atualiza o carrinho na sessão do servidor via AJAX (remover)
+  fetch('/atualizar-carrinho', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ cart: cart })
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data.message);
+    })
+    .catch(error => {
+      console.error('Erro ao atualizar o carrinho:', error);
+    });
+  localStorage.setItem('cart', JSON.stringify(cart)); // Usando localStorage
+  updateCart();
 }
 
 // Função para atualizar o carrinho na tela (modal)
