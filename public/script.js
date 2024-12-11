@@ -246,6 +246,13 @@ function removeFromCart(index) {
   updateCart();
 }
 
+function clearCart() {
+  if (confirm('Deseja limpar o carrinho?')) {
+    localStorage.removeItem('cart');
+    console.log('Carrinho limpo');
+    updateCart();
+  }
+}
 // Menu Hamburger
 document.addEventListener('DOMContentLoaded', function () {
   const hamburger = document.querySelector(".hamburger");
