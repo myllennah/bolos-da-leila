@@ -12,7 +12,7 @@ CREATE TABLE produtos (
 
 CREATE TABLE `cadastro` (
   `nome_cliente` varchar(100) NOT NULL,
-  `email` varchar(50) NOT NULL,
+  `email` varchar(50) primary key,
   `telefone` varchar(15) NOT NULL,
   `senha` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -36,10 +36,10 @@ INSERT INTO `produtos` (`id`, `nome`, `descricao`, `preco`, `imagem`, `categoria
 (6, 'Beijinho', 'Vendido em centos. Delicioso doce de leite condensado, coco e açúcar, coberto com coco ralado. Um clássico brasileiro irresistível!', 90.00, '../img/beijinho.jpg', 'doces');
 (7, 'Bicho de pé', 'Vendido em centos. Doce saboroso de morango, leite condensado e granulado colorido.', 90.00, '../img/bichodepe.png', 'doces'),
 (8, 'Bolo com tema de filmes', 'Dê vida à magia do cinema em sua festa com nossos bolos de personagens de filmes! Com decorações inspiradas em seus personagens e cenas favoritas, esses bolos são perfeitos para fãs de todas as idades. Escolha o tamanho, o sabor da massa e o recheio, e deixe sua celebração cinematográfica ainda mais especial!', 50.00, '../img/personagens.jpeg', 'bolos'),
-(9, 'Bolo com super-heróis', 'Deixe a sua festa cheia de ação com nossos bolos de super-heróis! Decorados com os personagens favoritos, símbolos e cores vibrantes, esses bolos são perfeitos para trazer toda a emoção das aventuras dos super-heróis. Escolha o tamanho, o sabor da massa e o recheio, e tenha um bolo que será o herói da sua celebração!', 50.00, '../img/herois.jpeg', 'bolos');
-(10, 'Bolinho de queijo', ' Crocante por fora e recheado com queijo derretido, uma delícia!', 50.00, '../img/herois.jpeg', 'bolos');
-
-
+(9, 'Bolo com super-heróis', 'Deixe a sua festa cheia de ação com nossos bolos de super-heróis! Decorados com os personagens favoritos, símbolos e cores vibrantes, esses bolos são perfeitos para trazer toda a emoção das aventuras dos super-heróis. Escolha o tamanho, o sabor da massa e o recheio, e tenha um bolo que será o herói da sua celebração!', 50.00, '../img/herois.jpeg', 'bolos'),
+(10, 'Bolinho de queijo', 'Crocante por fora e recheado com queijo derretido, uma delícia!', 80.00, '../img/bolinho-queijo.jpg', 'salgados'),
+(11, 'Croquete', 'Saboroso croquete crocante por fora, recheado com carne temperada e macia.', 80.00, '../img/croquete.jpg', 'salgados'),
+(12, 'Bolo com dinossauros', 'Um bolo cheio de aventura! Decorado com dinossauros e detalhes jurássicos, é perfeito para tornar a festa dos pequenos exploradores ainda mais especial.', 50.00, '../img/bolo-dino.png', 'bolos'),
 
 INSERT INTO `cadastro` ( `nome_cliente`, `email`, `telefone`, `senha`) VALUES
 ( 'Julia Melo Alves', 'julinhamelo@dayrep.com', '11960452493', 'LaeCh7sap'),

@@ -25,6 +25,7 @@
     <div class="pag-contato">
 
       <div class="form-contato">
+        <div id="mensagemCadastro"></div>
         <h5>Faça o seu cadastro</h5>
         <form action="" method="POST">
           <div>
@@ -51,6 +52,7 @@
       
       <form class="login" action="" method="post">
         <h5>Faça seu login</h5>
+        <p>Já tem cadastro? faça aqui o seu login.</p>
         <div>
           <label for="email_login">E-mail</label>
           <input id="input_nome" type="text" name="email" required />
@@ -60,33 +62,10 @@
           <input type="password" name="senha" required />
         </div>
         <a class="recuperacao_link" href="/recuperacao">Esqueceu sua senha ?</a>
-        <button class="button">Fazer login</button>
+        <a class="button" href="/paginacliente">Fazer login</a>
       </form>
 
   </main>
-  </main>
-
-  <div class="modal fade" id="carrinhoModal" tabindex="-1" role="dialog" aria-labelledby="carrinhoModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="carrinhoModalLabel">Seu Carrinho</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <ul id="itensCarrinho"></ul>
-          <p id="totalCarrinho">Total: R$ 0,00</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-          <a href="/checkout" class="btn btn-primary">Finalizar Compra</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <footer>
     <%-include('./parciais/footer.ejs') %> 

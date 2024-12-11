@@ -19,7 +19,7 @@ function alterarPreco(produtoId) {
   preco.setAttribute("data-current-price", precoFinal); // Store the updated price for use in cart functions
 }
 
-// Adicionar ao carrinho bolos com opções
+// Adiciona ao carrinho bolos com opções
 function addToCartOptions(productId, productName, productBasePrice) {
   //confere se usuário selecionou opções
   const tamanho = document.getElementById(`tamanho${productId}`);
@@ -83,12 +83,10 @@ function addToCartOptions(productId, productName, productBasePrice) {
     modal.style.display = 'none';
     modal.classList.remove('show');
   }
-
   const backdrop = document.querySelector('.modal-backdrop');
   if (backdrop) {
     backdrop.remove();
   }
-
   document.body.classList.remove('modal-open');
 }
 
@@ -165,6 +163,29 @@ function updateCart() {
   itensCarrinho.innerHTML = '';
   let total = 0;
 
+  const optionLabels = {
+    tamanho: {
+      '1kg': "1 kg",
+      '2kg': "2 kg",
+      '3kg': "3 kg",
+    },
+
+    sabormassa: {
+      baunilha: "Baunilha",
+      chocolate: "Chocolate",
+    },
+    
+    saborrecheio: {
+      brigadeiro: "Brigadeiro",
+      ninhomorango: "Leite Ninho com morango",
+      beijinho: "Beijinho",
+      limao: "Mousse de limão",
+      maracuja: "Mousse de maracujá",
+      docedeleite: "Doce de Leite",
+      docedeleiteameixa: "Doce de Leite com ameixa",
+    }
+  };
+
   if (cart.length === 0) {
     itensCarrinho.innerHTML = `
       <tr>
@@ -181,12 +202,15 @@ function updateCart() {
 
       const row = document.createElement("tr");
       const opcoesSelecionadas = Object.entries(item.options || {})
-      .map(([key, value]) => `${key}: ${value}`)
-      .join("<br>");
+      .map(([key, value]) =>{
+        const label = optionLabels[key];
+        return label ? `<li>${label[value] || `${key}: ${value}`}</li>` : ``; // Handle missing values or keys
+      })
+      .join("");
       row.innerHTML = `
       <td>
         ${item.name}<br>
-        <small>${opcoesSelecionadas}</small>
+        <ul>${opcoesSelecionadas}</ul>
       </td>
       <td>R$ ${item.price.toFixed(2)}</td>
       <td>
@@ -273,5 +297,50 @@ document.addEventListener('DOMContentLoaded', function () {
   // Evento para atualizar o carrinho quando o modal for aberto
   $('#carrinhoModal').on('shown.bs.modal', function () {
     updateCart();
+  });
+});
+
+// exibe mensagem de sucesso ou erro no cadastro
+const urlParams = new URLSearchParams(window.location.search);
+const success = urlParams.get('success');
+const error = urlParams.get('error');
+
+if (success === 'true') {
+  // mensagem de sucesso
+  const messageDiv = document.getElementById("mensagemCadastro");
+  messageDiv.textContent = "Cadastro realizado com sucesso!";
+} else if (error === 'true') {
+  // mensagem de erro
+  const messageDiv = document.getElementById("mensagemCadastro");
+  messageDiv.textContent = "Erro ao realizar o cadastro. Tente novamente.";
+};
+
+// pág de contato
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  const nome = document.getElementById('input_nome').value;
+  const telefone = document.getElementById('telefone').value;
+  const mensagem = document.getElementById('mensagem').value;
+
+  fetch('/contato', { // envia dados para o servidor
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ nome, telefone, mensagem })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      document.getElementById('contactMessage').innerHTML = '<p>Sua mensagem foi enviada!</p>';
+      document.getElementById('contactForm').reset(); // limpa o formulário
+    } else {
+      document.getElementById('contactMessage').innerHTML = `<p>${data.mensagem}</p>`;
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+    document.getElementById('contactMessage').innerHTML = '<p>Erro ao enviar mensagem. Tente novamente.</p>';
   });
 });

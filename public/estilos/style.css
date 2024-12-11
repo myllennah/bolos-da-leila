@@ -450,14 +450,12 @@ footer>nav>ul>li>a:hover {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  transform: translateX(-5%);
+  /* transform: translateX(-5%); */
 }
 
 .form-contato {
   width: 35vw;
   padding: 5rem;
-  margin-left: 10%;
-
 }
 
 form div {
@@ -490,7 +488,13 @@ form input, form textarea {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  justify-self: center;
+}
 
+#mensagemCadastro {
+  font-family: 'Muli';
+  font-size: 1.8rem;
+  margin-bottom: 5%;
 }
 
 .pagcliente_corpo {
@@ -705,7 +709,7 @@ th {
   }
 
   .form-contato {
-    width: 70vw;
+    width: 84vw;
     padding: 2rem;
     margin-left: none;
   }
@@ -721,6 +725,8 @@ th {
 
   iframe {
     overflow-x: hidden;
+    width: 100%;
+    height: 100%;
   }
 
   .historia>.titulo_historia {
@@ -794,7 +800,8 @@ th {
     justify-content: center;
     display: flex;
     margin: auto;
-    width: 70%;
+    width: 60%;
+    font-size: 1.8rem;
   }
 
 
@@ -1019,9 +1026,10 @@ th {
   font-size: 4rem;
 }
 
-#tabelaCarrinho small {
+#tabelaCarrinho li {
   font-family: 'Muli', sans-serif;
   font-size: 1.5rem;
+  list-style: none;
 }
 
 /* Cardápio */
@@ -1157,5 +1165,29 @@ i {
 
   .modal-title h5 {
     font-size: 1rem;
+  }
+
+  .mapa {
+    border: none;
+  }
+
+  .fotoperfil {
+    width: 90%;
+    height: auto;
+  }
+
+  .texto-footer{
+    display: none;
+  }
+
+  #tabelaCarrinho tr > td:nth-child(2),
+  #tabelaCarrinho tr > th:nth-child(2) {
+    display: none;
+  }
+  #tabelaCarrinho li {
+    font-size: 1.2rem;
+  }
+  #tabelaCarrinho tbody td {
+    font-size: 1.5rem;
   }
 }

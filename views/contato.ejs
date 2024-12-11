@@ -25,21 +25,22 @@
      <div class="form-contato">
       <h3>Faça a sua encomenda!</h3>
       <p>Não encontrou exatamente o que procurava?<br>Fale conosco sobre seu pedido especial e surpreenda com um bolo sob medida para sua ocasião!</p>
-      <form action="contato.php" method="POST">
+      <form id="contactForm" action="" method="POST">
         <div>
           <label for="nome">Nome</label>
           <input id="input_nome" type="text" name="nome" required/>
         </div>
         <div>
           <label for="telefone">Telefone de contato</label>
-          <input type="text" name="telefone" required/>
+          <input id="telefone" type="text" name="telefone" required/>
         </div>
         <div>
           <label for="Mensagem">Mensagem</label>
-          <textarea name="mensagem" required></textarea>
+          <textarea id="mensagem" name="mensagem" required></textarea>
         </div>
-        <button class="button">Fazer pedido</button>    
+        <button class="button" type="submit">Fazer pedido</button>    
       </form>
+      <div id="contactMessage"></div>
      </div>
 
        <!-- Mapa -->

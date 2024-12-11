@@ -66,6 +66,15 @@ app.get('/contato', (req, res) => {
   res.render('contato');
 });
 
+app.post('/contato', (req, res) => {
+  const { nome, telefone, mensagem } = req.body;
+  console.log("Mensagem recebida:", nome, telefone, mensagem);
+
+  // Simulate a successful response
+  res.json({ success: true, message: 'Mensagem recebida! (mensagem para fins de demonstração)' });
+});
+
+
 // Rota para a página teste de cardápio e produto
 app.get('/cardapioteste', (req, res) => {
   res.render('cardapio2');
@@ -102,9 +111,13 @@ app.post('/login', function (req, res) {
 
     var sql = "INSERT INTO cadastro (nome_cliente, email, telefone, senha) VALUES (?, ?, ?, ?)";
     conexao.query(sql, [nome_cliente, email, telefone, senha], function (error, result) {
-      if (error) throw error;
-      res.send("Cliente "+nome_cliente+" cadastrado com sucesso! Com o email:  " + email); 
-      res.redirect('/login');
+      if (error) {
+        // Handle errors appropriately, log the error for debugging
+        console.error("Database error:", error);
+        res.redirect('/login?error=true'); // Redirect with error parameter
+      } else {
+        res.redirect('/login?success=true'); // Redirect with success parameter
+      }
     });
   });
 });
