@@ -79,7 +79,9 @@ a {
   border: none;
   border-radius: 1rem;
 } */
-
+#logo_home{
+  display: none;
+}
 .button:hover {
   text-decoration: none;
   color: #ffffff;
@@ -713,6 +715,9 @@ th {
     padding: 2rem;
     border-left: none;
   }
+  #logo_home{
+    display: contents;
+  }
 
   iframe {
     overflow-x: hidden;
@@ -777,6 +782,7 @@ th {
     width: 90%;
     font-size: 3rem;
   }
+  
 
   .sobre_produtos_filho {
     padding: 1rem;

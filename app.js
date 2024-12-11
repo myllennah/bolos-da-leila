@@ -104,7 +104,7 @@ app.post('/login', function (req, res) {
     conexao.query(sql, [nome_cliente, email, telefone, senha], function (error, result) {
       if (error) throw error;
       res.send("Cliente "+nome_cliente+" cadastrado com sucesso! Com o email:  " + email); 
-      console.log('Cadastrado com sucesso!');
+      res.redirect('/login');
     });
   });
 });
