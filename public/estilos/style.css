@@ -566,8 +566,9 @@ form input, form textarea {
 }
 
 .table_checkout td,
-th {
+th, small {
   padding: 2rem;
+  font-family: 'Muli';
 }
 
 /* cards cardapio */
