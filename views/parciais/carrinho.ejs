@@ -1,0 +1,44 @@
+ <head>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=cancel" />
+ </head>
+ 
+ <div class="modal fade" id="carrinhoModal" tabindex="-1" role="dialog" aria-labelledby="carrinhoModalLabel"
+ aria-hidden="true">
+ <div class="modal-dialog" role="document">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h5 class="modal-title" id="carrinhoModalLabel">Seu Carrinho</h5>
+       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <span class="material-symbols-outlined">cancel</span>
+       </button>
+     </div>
+     <div class="modal-body">
+       <table id="tabelaCarrinho" class="table">
+         <thead>
+           <tr>
+             <th>Produto</th>
+             <th>Preço Unitário</th>
+             <th>Quantidade</th>
+             <th>Subtotal</th>
+             <th>Ação</th>
+           </tr>
+         </thead>
+         <tbody id="itensCarrinho"></tbody>
+         <tfoot>
+           <tr>
+             <td colspan="3">Total:</td>
+             <td id="totalCarrinho" colspan="2">R$ 0,00</td>
+           </tr>
+         </tfoot>
+       </table>
+      
+     </div>
+     <div class="modal-footer">
+      
+       <a href="/checkout" class="btn btn-primary">Finalizar Compra</a>
+       <button type="button" class="btn btn-danger" onclick="clearCart()">Limpar Carrinho</button>
+     </div>
+   </div>
+ </div>
+</div>
