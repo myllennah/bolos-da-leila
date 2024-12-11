@@ -705,6 +705,7 @@ th {
   .form-contato {
     width: 70vw;
     padding: 2rem;
+    margin-left: none;
   }
 
   .login {
@@ -851,7 +852,6 @@ th {
 }
 
 /* Estilos para o cardápio */
-
 .preco {
   font-weight: bold;
 }
@@ -928,6 +928,21 @@ th {
 
 #bolos h3, #doces-salgados h3 {
   margin: 2rem auto;
+}
+
+.descritivo-cardapio {
+  width: 80%;
+  justify-self: center;
+  margin-bottom: 5%;
+}
+
+.descritivo-cardapio a {
+  text-decoration: none;
+  font-size: 1.8rem;
+}
+
+.descritivo-cardapio a:hover{
+  color: #ff0084;
 }
 
 /* modais para teste de cardapio */

@@ -31,6 +31,7 @@
       <!-- Bolos -->
       <section id="bolos">
         <h3>Bolos</h3>
+        <p class="descritivo-cardapio">Escolher seu bolo perfeito é simples! Primeiro, selecione o tema que deseja entre nossas opções. Depois, escolha o tamanho, o sabor da massa e o recheio. No campo de observações, descreva os detalhes do seu pedido, como o tema específico (personagem, time, etc.), cores e outros requisitos.<br>Se precisar de algo mais personalizado, <a href="/contato">entre em contato conosco</a>.<br>Cada 1kg de bolo rende cerca de 10 fatias.</p>
         <div class="row">
           <% produtos.forEach(produto=> { %>
             <% if (produto.categoria === 'bolos') { %>
@@ -124,6 +125,7 @@
         <!-- Doces e Salgados -->
          <section id="doces-salgados">
           <h3>Doces e Salgados</h3>
+          <p class="descritivo-cardapio">Além do bolo dos sonhos, oferecemos uma seleção deliciosa de doces e salgados para deixar sua festa ainda mais especial.<br>Tanto os doces quanto os salgados são vendidos por centos.</p>
           <div class="row">
             <% produtos.forEach(produto => { %>
               <% if (produto.categoria === 'doces'|| produto.categoria === 'salgados') { %>
